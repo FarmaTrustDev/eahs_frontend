@@ -1,0 +1,155 @@
+.patient-details-page {
+  // margin-left:35px;
+  // margin-right:35px;
+  // margin-top:30px;
+  .grey-card.m-0 {
+    // padding-top: 0 !important;
+  }
+  .qr-section {
+    height: 240px;
+    figure {
+      text-align: center;
+      img {
+        border-radius: 28px;
+        -webkit-box-shadow: 2px 2px 15px 1px #bdb7bd;
+        -moz-box-shadow: 2px 2px 15px 1px #bdb7bd;
+        box-shadow: 2px 2px 15px 1px #bdb7bd;
+        width: 83%;
+        margin-bottom: 15px;
+        margin-top: -82px;
+        max-height: 140px;
+        max-width: 140px;
+        padding: 15px;
+        z-index: 1;
+        background-color: #fff;
+      }
+      &::before {
+        border-radius: 30px;
+        content: '';
+        height: 100px;
+        width: 100%;
+        display: inline-block;
+        background-color: #3869d1;
+      }
+    }
+    .ant-card-body {
+      padding: 5px;
+    }
+  }
+  .details-section {
+    height: 240px;
+  }
+  h6 {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+    font-size: 1rem;
+  }
+  .common-detail {
+    margin-bottom: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    dt,
+    dd {
+      width: 50%;
+      display: inline-block;
+    }
+    dd {
+      color: #000;
+      // display: inline !important;
+    }
+    dt {
+      color: #909090;
+      font-weight: 700;
+      line-height: 28px;
+      // display: inline !important;
+    }
+  }
+}
+.btn-send {
+  height: 35px;
+  background: #ececec;
+  border: gray;
+  color: gray;
+  &:hover {
+    color: #000;
+    background-color: #d5d5d5;
+  }
+}
+.btn-send.ant-btn[disabled] {
+  display: none !important;
+}
+.btn-send-mail {
+  height: fit-content;
+  span {
+    padding: 8px 2px;
+    font-size: 13px;
+  }
+}
+.ant-upload:hover {
+  .ant-btn:hover {
+    color: #000;
+    border: 1px solid #000;
+  }
+  .ant-btn:active {
+    color: #000;
+    border: 1px solid #000;
+  }
+  .ant-btn:focus {
+    color: #000;
+    border: 1px solid #000;
+  }
+}
+.aftercare-note {
+  padding: 15px 25px;
+}
+.aftercare-note:active {
+  background-color: #fff;
+  border: none;
+}
+.aftercare-note:focus {
+  background-color: #fff;
+  border: none;
+}
+.manf-treatment-body {
+  .ant-tabs-nav-container {
+    padding: 0;
+  }
+  .ant-tabs.ant-tabs-card {
+    .ant-tabs-tab {
+      width: 22.3%;
+      // color: #000;
+    }
+  }
+}
+.treatment_tabs {
+  .default-card.no-shadow >
+    .ant-card-body {
+      padding-top: 0;
+    
+  }
+  .no-shadow {
+    padding-right: 0;
+    padding-left: 0;
+    .view-screen {
+      .ant-card-body {
+        padding-right: 0;
+        padding-left: 0;
+        .ant-tabs-nav-container.ant-tabs-nav-container-scrolling {
+          padding: 0;
+          .ant-tabs-tab-arrow-show {
+            display: none;
+          }
+          .ant-tabs-tab {
+            .tab-title {
+              padding-left: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,76 @@
+.login {
+  max-width: 460px;
+  margin: auto;
+  margin-left: 90px !important;
+  .ant-card {
+    box-shadow: 0 26px 120px rgba(0, 0, 0, 0.04);
+    border-radius: 30px;
+    padding: 15px;
+  }
+  .ant-form-item
+  {
+    margin-bottom: 5px;
+  }
+  .ant-btn
+  {
+    margin-bottom: 10px;
+  }
+  .ant-card-head {
+    border-bottom: none;
+  }
+  .ant-card-head-title{
+    font-weight: 600;
+    color: #233151;
+    font-size: 1.5625rem;
+  }
+  .ant-form-item-label label{
+    color: #909090;
+    font-weight: 400;
+    font-size: 1.15em;
+  }
+  .ant-checkbox-wrapper{
+    color: #212529;
+    font-size: 1.063rem;
+  }
+  .forgot-link {
+    padding-left: 5px;
+    font-weight: 400;
+    font-size: 	1rem;
+    a {
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.half-secondary {
+  &::before {
+    @extend .bg-secondary;
+
+    
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+    position: fixed;
+    right: 0;
+    top: 0;
+    border-radius: 30px;
+    max-width: 30%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .half-secondary {
+    &::before {
+      display: none;
+    }
+  }
+  .login {
+    .ant-card-head-title {
+      text-align: center;
+    }
+  }
+}
+
+

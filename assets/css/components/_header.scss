@@ -1,0 +1,80 @@
+header.ant-layout-header {
+  background-color: white;
+  // padding-top: 15px;
+  padding: 1px 25px;
+  height: 80px;
+  // line-height: 50px;
+
+  .user-detail,
+  .hospital-detail {
+    max-width: 600px;
+  }
+  .user-detail {
+    float: left;
+    font-size: 1.12em;
+    font-weight: 400;
+    color: #212529;
+  }
+  .hospital-detail {
+    float: right;
+    display: flex;
+    align-items: baseline;
+    .ant-select-selection--single {
+      background-color: #f9f9f9;
+      font-weight: bold;
+      height: 55px;
+    }
+  }
+  .login-logo {
+    background-color: #f9f9f9;
+    border-radius: 44px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-right: 10px;
+    // line-height: normal;
+    display: flex;
+    align-items: center;
+    // margin-bottom: 20px;
+    img {
+      max-width: 100px;
+      max-height: 24px;
+      vertical-align: middle;
+      border-style: none;
+    }
+    .title {
+      font-weight: bold;
+    }
+  }
+  .notifications {
+    margin-right: 10px;
+    color: black;
+    padding-top: 3px;
+    .anticon {
+      font-size: 1.8rem;
+      color: black;
+    }
+  }
+}
+.notifications-dropdown {
+  max-height: 500px;
+  overflow-y: auto;
+  .ant-dropdown-menu-item {
+    padding: 0.25rem 1.5rem;
+    width: 300px;
+  }
+}
+.cart-dropdown {
+  max-height: 700px;
+  width: 400px;
+  overflow-y: auto;
+  .ant-dropdown-menu-item {
+    padding: 0.25rem 1.5rem;
+    width: 300px;
+  }
+}
+.pg-head {
+  float: left;
+  font-size: 1.12em;
+  font-weight: 400;
+  color: #212529;
+}

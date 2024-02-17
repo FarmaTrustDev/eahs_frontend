@@ -1,0 +1,37 @@
+
+.admin-screenging-questions {
+  .ant-list-item {
+    margin-top: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+    border: 1px solid;
+    border-radius: 15px;
+    color: black;
+    padding-left: 1%;
+    border-bottom: 1px solid !important;
+  }
+  .ant-list-grid .ant-col > .ant-list-item {
+    /* display: block; */
+    max-width: 100%;
+    margin-bottom: 16px;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+}
+
+// --------------
+.users-list {
+  .ant-table-row {
+    td:first-child {
+      font-weight: 400 !important;
+    }
+  }
+  // td.user-role {
+  //   background: rgb(255, 255, 203);
+  //   border-radius: 22px;
+  //   margin: 5px 0;
+  // }
+}

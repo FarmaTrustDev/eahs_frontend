@@ -1,0 +1,11 @@
+.fc-daygrid-day-events a {
+  background: #3869d1;
+  color: white !important;
+  padding: 8px;
+  border-radius: 13px;
+  font-size: 0.75rem;
+  font-weight: 400;
+  &:hover{
+    background: #3869d1;
+  }
+}

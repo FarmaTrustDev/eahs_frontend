@@ -1,0 +1,99 @@
+.sample-form-container {
+  border: 1px solid #000;
+  padding: 5px;
+  color: #000;
+  .left {
+    border-right: 1px solid black;
+    padding: 0 5px;
+  }
+  .bar-code-container {
+    text-align: right;
+  }
+  img {
+    max-width: 80%;
+    vertical-align: middle;
+    border-style: none;
+  }
+  .img-fluid {
+    height: auto;
+  }
+  .hospital-name {
+    margin: 15px auto;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+  .collection-datetime {
+    font-size: 0.875rem;
+    margin: 5px auto;
+  }
+  .collection-time {
+    width: 60px;
+    display: inline-block;
+    font-size: 0.625rem;
+    vertical-align: middle;
+  }
+  .irradiate {
+    font-size: 0.875rem;
+  }
+  .manufacturer-name {
+    font-size: 0.9375rem;
+    margin-top: 5px;
+    font-weight: bold;
+    display: block;
+  }
+  .manufacturer-detail {
+    font-size: 0.625rem;
+    display: inline-block;
+  }
+  .further {
+    font-size: 1rem;
+  }
+  .right {
+    font-size: 0.75rem;
+    padding-left: 5px;
+    .bag-qr {
+      max-width: 50px;
+    }
+  }
+}
+
+.footer-btn-label {
+  height: auto;
+  font-size: 1rem;
+  padding: 0.2em 0.85rem;
+}
+.footer-btn-label-cancelled {
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+.print-btn {
+  font-size: 0.875rem;
+  padding: 10px 15px;
+  background-color: #3869d1;
+  border-radius: 18px;
+  border-color: #3869d1;
+  height: auto;
+}
+
+.blue {
+  background-color: blue;
+  color: #fff;
+}
+.gray {
+  background-color: gray;
+  color: #fff;
+}
+.label-page {
+  padding-left: 40px;
+  padding-right: 40px;
+  .page-search-input {
+    right: 0;
+  }
+  .ant-table-row {
+    td:first-child {
+      font-weight: 400 !important;
+    }
+  }
+}

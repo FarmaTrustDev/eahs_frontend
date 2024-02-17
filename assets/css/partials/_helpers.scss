@@ -1,0 +1,251 @@
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.d-block {
+  display: block;
+}
+
+.d-none {
+  display: none;
+}
+
+.text-muted {
+  font-weight: 400;
+  color: #6c757d;
+}
+
+.text-color-black {
+  color: #000;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.float-right {
+  float: right;
+}
+
+.float-left {
+  float: left;
+}
+
+
+.status {
+  padding: 13px 15px;
+  font-size: 0.875rem;
+  border-radius: 10rem;
+  width: 118px !important;
+  display: inline-block !important;
+}
+
+.status-inprocess,
+.status-in {
+  background-color: #ecf6fd;
+  white-space: nowrap;
+}
+
+.status-resolved {
+  background-color: #d1f2dd;
+}
+
+.status-pause {
+  background-color: #ffdd61;
+}
+
+.status-archived {
+  background-color: #f3e5f4;
+}
+
+.status-cancelled {
+  background-color: #ff8361;
+}
+
+.h-100vh {
+  min-height: 50vh;
+}
+
+.position-relative {
+  position: relative !important;
+}
+.position-inherit{
+  position: inherit !important;
+}
+.has-error {
+  border-color: red;
+}
+
+.error-message {
+  color: red;
+}
+// client hub
+.responsive_img,
+.img-responsive {
+  max-width: 100%;
+  height: 100px;
+  border-radius: 20px;
+}
+
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+}
+
+.danger-time {
+  background-color: $danger;
+  padding: 15px 30px;
+  border-radius: 15px;
+  color: white;
+  font-size: 1.5625rem;
+  @extend .light-shadow;
+}
+
+.dated-time {
+  background-color: $danger;
+  padding: 7% 14%;
+  border-radius: 22px;
+  color: white;
+  font-size: 1.6rem;
+  cursor: pointer;
+  @extend .light-shadow;
+
+  padding-right: 23%;
+  position: absolute;
+  margin: -7px;
+  margin-left: 3px;
+}
+
+.w-1200 {
+  max-width: 76%;
+}
+
+.w-min-200 {
+  min-width: 200px;
+}
+
+.imageHeading {
+  img {
+    vertical-align: top;
+  }
+}
+
+.display-inline-block {
+  display: inline-block;
+}
+.display-flex {
+  display: flex;
+}
+.space-even{
+  justify-content: space-evenly;
+}
+.flex-end{
+  align-items: flex-end;
+}
+.timebox {
+  margin-bottom: 10px;
+  border: none !important;
+  .ant-list-item {
+    padding: 12px 0;
+    padding-right: 15px;
+    padding-left: 15px;
+    border: 1px solid gainsboro !important;
+    border-radius: 22px;
+    margin-bottom: 10px;
+    p {
+      margin: 0 !important;
+      padding: 7px;
+      color: rgb(112, 112, 112);
+    }
+    p.mt-15 {
+      padding: 15px;
+    }
+  }
+  h4 {
+    margin: 0;
+    a {
+      font-weight: 600;
+      font-size: 13px;
+      color: #000;
+    }
+  }
+}
+.page-footer {
+  .ant-table-pagination.ant-pagination {
+    // float: left;
+    text-align: right;
+    display: inline-block;
+    .ant-pagination-options {
+      float: left;
+      .ant-select-selection--single {
+        float: left;
+      }
+    }
+  }
+  .ant-pagination-options-size-changer.ant-select {
+    display: inline-block;
+    width: auto;
+    margin-right: 1140px;
+  }
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.stat-image {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: -40px;
+  width: 50%;
+  height: 50%;
+}
+
+.notifications-dropdown {
+  max-height: 80vh;
+  overflow-y: scroll;
+}
+// ===============
+.manf-schedule {
+  td {
+    .ant-btn {
+      height: fit-content;
+      span {
+        padding: 12px 10px;
+      }
+    }
+  }
+  .rounded-table .ant-table-tbody {
+    td:first-child {
+      font-weight: 400;
+    }
+  }
+}
+.manf-schedule > .ant-card-body {
+  padding-top: 0;
+}
+.project {
+  .rounded-table {
+    table {
+      border-collapse: separate;
+      border-spacing: 0 1em;
+      text-align: left;
+      vertical-align: middle;
+    }
+  }
+}

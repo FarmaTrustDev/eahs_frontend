@@ -1,0 +1,70 @@
+.ant-btn-primary,
+.ant-btn-primary:hover {
+  background-color: $primary-color;
+  border-color: $primary-color;
+  //   &:hover  {
+  //     background-color: #1749b5;
+  //     border-color: #1749b5;
+  //   }
+}
+.process-btn{
+  .ant-btn {
+    width:70%;
+  }
+}
+a {
+  color: $primary-color;
+  &:hover {
+    color: $primary-color;
+  }
+}
+.new-treatment-btn {
+  background-color: #ffdbdb;
+  border-color: #ffdbdb;
+}
+.new-treatment-status-btn {
+  padding: 13px 15px;
+  background-color: #fff8e5;
+  height: 35px !important;
+  border: 0;
+  width: 87px;
+  &:hover {
+    background-color:#fff8e5 !important;
+  }
+}
+.error-ok-btn{
+  padding: 5px 50px;
+}
+// ======extra
+.grey-card.treat-body {
+  .grey-card.mt-5{
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    padding-top: 5px !important;
+  }
+}
+// 
+// .add-new-ticket-form {
+
+// }
+.icon-hover:hover{
+  background-color: blue;
+  color: white;
+}
+.manf-detail-list {
+  table {
+    tr {
+      td {
+        color: #000;
+        border-right: 0 !important;
+        border-left: 0 !important;
+        border-top: 0 !important;
+        border-bottom: 1px solid #ececec !important;
+        border-bottom-left-radius: 0 !important;
+    border-top-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+      }
+    }
+  }
+}

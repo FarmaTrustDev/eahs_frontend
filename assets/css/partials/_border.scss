@@ -1,0 +1,22 @@
+$default-radius: 22px;
+$large-radius: 44px;
+.default-border-radius {
+  border-radius: $default-radius;
+}
+.large-border-radius {
+  border-radius: $large-radius;
+}
+
+.border {
+  border: 1px solid #e2e2e2;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #e2e2e2;
+}
+.bd-r-5{
+  border-radius: 5px;
+}
+.brd-sty{
+  border:1px solid #D9D9D9
+}

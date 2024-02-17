@@ -1,0 +1,419 @@
+.enrollment-page {
+  margin: 0;
+  padding: 26px !important;
+  .ant-tabs .ant-tabs-left-content {
+    border-left: unset;
+  }
+  .ant-tabs-content.ant-tabs-content-animated.ant-tabs-left-content {
+    padding-left: 32px !important;
+    margin-top: 15px !important;
+    border-left: 1px solid gainsboro;
+  }
+  .ant-tabs-left-bar {
+    border-right: unset;
+    width: 25%;
+    .tab-title.main {
+      padding: 10px;
+      align-items: center;
+      width: 100%;
+      margin: 0;
+      // width: fit-content;
+      // padding-right: 25px;
+    }
+  }
+
+  .ant-tabs-ink-bar {
+    display: none;
+    background-color: transparent;
+  }
+  .consent-page {
+    padding: 0 15px;
+    form {
+      text-align: center;
+    }
+    .ant-checkbox-wrapper {
+      font-size: 1.3rem;
+      color: #919191;
+      margin-top: 50px;
+    }
+    .ant-upload {
+      margin-top: 30px;
+    }
+    .ant-table-content .ant-table-tbody {
+      tr {
+        border: unset;
+        border-bottom: 1px solid #e2e2e2;
+      }
+    }
+  }
+  .ant-upload-select-picture-card i {
+    font-size: 2rem;
+    color: #999;
+  }
+  .ant-upload-select-picture-card .ant-upload-text {
+    margin-top: 8px;
+    color: #666;
+  }
+  .ant-switch {
+    margin-top: 10px;
+    height: 40px;
+    width: 85px;
+    // background-color: #fa6363;
+    color: #fff;
+    &::after {
+      top: 9px;
+      left: 8px;
+    }
+  }
+  .ant-switch-inner {
+    font-size: 1rem;
+  }
+  .ant-switch-checked {
+    background-color: #2255c2;
+    &::after {
+      top: 9px;
+      left: 95%;
+    }
+  }
+  .btn-complete-category {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .fc {
+    color: #000;
+    .fc-daygrid-event {
+      box-shadow: 1px 1px 4px 2px #8080807e;
+    }
+    a {
+      color: #000;
+      &:hover {
+        color: #000;
+      }
+    }
+    .fc-toolbar {
+      background: #fff;
+      border-radius: 20px;
+      padding: 10px 20px;
+      margin-top: 15px;
+      margin-bottom: 1.5rem;
+      vertical-align: middle;
+      .fc-button {
+        border: 0;
+      }
+      .fc-prev-button {
+        border-right: 2px solid #fff !important;
+      }
+    }
+    .fc-view-harness {
+      background: #fff;
+      border-radius: 20px;
+      padding: 15px;
+    }
+    .fc-col-header-cell {
+      font-size: 0.75rem;
+      padding: 0.75rem 0.5rem;
+      font-weight: 500;
+    }
+    .fc-daygrid-body {
+      border-top: 1px solid #ebedf2;
+    }
+    .fc-toolbar-title {
+      display: inline-block;
+      font-size: 1.125rem;
+      margin: 15px;
+      text-transform: uppercase;
+    }
+    .fc-prevYear-button,
+    .fc-nextYear-button {
+      font-size: 0.875rem;
+      color: #233151;
+      background-color: transparent;
+      box-shadow: none;
+      border: 1px solid #ebedf2;
+      padding: 15px 10px;
+      border-radius: 22px;
+      &:hover {
+        background-color: $primary-color;
+      }
+    }
+    .fc-prevYear-button:active,
+    .fc-nextYear-button:active {
+      background-color: $primary-color !important;
+      border: none;
+    }
+    .fc-prevYear-button:focus,
+    .fc-nextYear-button:focus {
+      border: 1px solid #ebedf2;
+      box-shadow: none;
+    }
+    .fc-button-primary:not(.fc-prevYear-button, .fc-nextYear-button) {
+      background-color: $primary-color;
+      color: #fff;
+      &:hover {
+        background-color: $primary-color;
+      }
+    }
+  }
+  .fc-theme-standard .fc-scrollgrid,
+  .fc-theme-standard th {
+    border: unset;
+  }
+  .fc-theme-standard td {
+    &:last-child {
+      border-bottom: unset;
+    }
+  }
+
+  .empty-message {
+    color: #383d41;
+    font-size: 0.875rem;
+    font-weight: bold;
+    margin-top: 0.5rem;
+    background-color: #e2e3e5;
+    border-color: #d6d8db;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+  }
+  .ant-descriptions-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  .ant-descriptions-item-label.ant-descriptions-item-colon,
+  .ant-descriptions-item-content {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .ant-descriptions-item {
+    width: 50% !important;
+    margin-right: 10px;
+    font-weight: 600;
+  }
+  .line {
+    background-color: #e2e2e2;
+    border: 1px solid #ececec;
+  }
+
+  .external-entity {
+    .ant-descriptions-item-content {
+      display: block;
+      padding: 15px 25px;
+      background-color: #e9ecef;
+      font-size: 1rem;
+      margin-top: 15px;
+      border-radius: 35px;
+      margin-right: 20px;
+      font-weight: 400;
+    }
+  }
+ 
+}
+.patient-page {
+  .enrollment-page {
+    .ant-card-body {
+      // padding: 28px !important;
+      margin: 6px;
+      padding-right: 6px !important;
+    }
+    .ant-form-item-control {
+      input.ant-input:hover {
+        border-color: transparent !important;
+        box-shadow: none !important;
+      }
+      input.ant-input:focus {
+        border-color: transparent !important;
+        box-shadow: none !important;
+        background-color: #fff !important;
+      }
+    }
+  }
+}
+
+.green-on-update {
+  .ant-tabs-tab {
+    text-align: left;
+    // padding: 8px 25px !important;
+  }
+  .tab-title {
+    text-align: left;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 22px;
+    color: #233151;
+    background-color: #f9f9f9;
+    &::before {
+      position: inherit;
+      content: '';
+      height: 40px;
+      width: 40px;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 1px;
+      background-size: 100%;
+      background-image: url('https://cgt-dev-ft.microsysx.com/images/v2/icons/circle.svg');
+      border-top: none;
+      background-repeat: no-repeat;
+    }
+  }
+  .ant-tabs-bar {
+    .ant-tabs-tab-completed {
+      background-color: #d1f2dc;
+      text-decoration: none;
+      font-weight: 500;
+      border-radius: 22px;
+      color: #233151;
+      text-align: left;
+      &::before {
+        position: inherit;
+        content: '';
+        height: 40px;
+        width: 40px;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 1px;
+        border-top: none;
+        background-size: cover;
+        background-image: url('https://cgt-dev-ft.microsysx.com/images/v2/icons/status-done-circle.svg');
+        background-repeat: no-repeat;
+      }
+    }
+    .ant-tabs-tab-active {
+      .tab-title {
+        text-align: left;
+        background-color: #f2f5fb;
+        &::before {
+          background-size: cover;
+          margin-right: 1px;
+          background-image: url('https://cgt-dev-ft.microsysx.com/images/v2/icons/circle-active.svg');
+          background-repeat: no-repeat;
+        }
+      }
+    }
+  }
+  .square-table {
+    .ant-row.ant-form-item {
+      margin-bottom: 2px;
+    }
+  }
+}
+
+.schedule-create-tabs {
+  .enrollment-page {
+    padding: 10%;
+    background-color: #f9f9f9;
+    border-radius: 24px;
+    .ant-tabs .ant-tabs-left-bar .ant-tabs-tab,
+    .ant-tabs .ant-tabs-right-bar .ant-tabs-tab {
+      text-align: left;
+      margin-left: 3%;
+    }
+    .enrollment-page .ant-tabs-left-bar .ant-tabs-tab {
+      text-align: left;
+      padding: 10%;
+      border-radius: 24px;
+    }
+    .ant-alert-info {
+      padding: 20px 15px;
+      background-color: gainsboro;
+      border: 1px solid gainsboro;
+    }
+  }
+  .fc-daygrid-event.fc-daygrid-dot-event.fc-event {
+    padding: 10px;
+    font-size: 12px;
+    background: #3869d1;
+    margin-bottom: 10px;
+    text-align: center;
+    box-shadow: 1px 1px 4px 0 #323232bf;
+    &:hover {
+      cursor: default;
+    }
+    .fc-daygrid-event-dot {
+      display: none;
+    }
+  }
+}
+.enrollment-title {
+  .ant-card-head-title {
+    display: inline-block;
+    flex: 1;
+    padding: 20px 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+
+.schedule-logistic-selection {
+  .ant-select-selection {
+    margin-bottom: 20px;
+    border-radius: 22px;
+    padding: 1px 1px 15px 5px;
+    border: none;
+    background-color: #f9f9f9;
+  }
+  .ant-form-item-control .ant-select-selection__placeholder {
+    margin-top: -15px;
+  }
+}
+.patient-phone-field{
+  .has-error .ant-select-selection {
+    border: 1px solid red !important;
+}
+.has-error .ant-input {
+  background-color: #fff;
+  border: 1px solid red;
+  border-left-color: white;
+}
+  .ant-input-group.ant-input-group-compact > *:first-child,
+.ant-input-group.ant-input-group-compact
+> .ant-select:first-child
+> .ant-select-selection,
+.ant-input-group.ant-input-group-compact
+> .ant-calendar-picker:first-child
+.ant-input,
+.ant-input-group.ant-input-group-compact
+> .ant-select-auto-complete:first-child
+.ant-input,
+.ant-input-group.ant-input-group-compact
+> .ant-cascader-picker:first-child
+.ant-input,
+.ant-input-group.ant-input-group-compact
+> .ant-mention-wrapper:first-child
+.ant-mention-editor,
+.ant-input-group.ant-input-group-compact
+> .ant-time-picker:first-child
+.ant-time-picker-input {
+border-top-left-radius: 20px;
+border-bottom-left-radius: 20px;
+padding-bottom: 1px;
+}
+.ant-input-group.ant-input-group-compact > *:last-child,
+.ant-input-group.ant-input-group-compact
+> .ant-select:last-child
+> .ant-select-selection,
+.ant-input-group.ant-input-group-compact
+> .ant-calendar-picker:last-child
+.ant-input,
+.ant-input-group.ant-input-group-compact
+> .ant-select-auto-complete:last-child
+.ant-input,
+.ant-input-group.ant-input-group-compact
+> .ant-cascader-picker:last-child
+.ant-input,
+.ant-input-group.ant-input-group-compact
+> .ant-cascader-picker-focused:last-child
+.ant-input,
+.ant-input-group.ant-input-group-compact
+> .ant-mention-wrapper:last-child
+.ant-mention-editor,
+.ant-input-group.ant-input-group-compact
+> .ant-time-picker:last-child
+.ant-time-picker-input {
+border-right-width: 1px;
+border-top-right-radius: 20px;
+border-bottom-right-radius: 20px;
+}
+}

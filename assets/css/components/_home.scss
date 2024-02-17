@@ -1,0 +1,328 @@
+.home-page,
+.admin-page {
+  // padding-right: 15px;
+  // padding-left: 15px;
+  // margin: 25px;
+
+  .title {
+    font-size: 1.5625rem;
+    padding-left: 15px;
+    margin-left: 10px;
+  }
+
+  .home-tab,
+  .admin-tab {
+    text-decoration: none;
+    margin: 5% auto;
+    padding: 25px 12px;
+    // padding-top: 7%;
+    // padding-bottom: 6%;
+    box-shadow: 0 26px 120px rgb(0 0 0 / 4%);
+    color: #909090;
+    background-color: #fff;
+    border-radius: 44px;
+
+    img {
+      background-color: #f9f9f9;
+      vertical-align: middle;
+      border-style: none;
+      max-width: 72px;
+      max-height: 75px;
+      padding: 13px;
+      border-radius: 22px;
+    }
+
+    &::before {
+      content: '>';
+      right: 20px;
+      height: 23px;
+      line-height: 1;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      font-size: 1.5rem;
+      font-weight: bold;
+      position: relative;
+      left: 95%;
+    }
+
+    &:hover {
+      cursor: pointer;
+      color: #fff;
+      transition: transform 0.8s ease-in-out, background-color 0.3s ease-in-out,
+        color 0.3s ease-in-out, background-image 0.3s ease-in-out;
+      background-image: url('https://cgt-dev-ft.microsysx.com/assets/media/bg/bg-hover-blue.svg');
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      h4 {
+        color: #fff;
+      }
+      img {
+        transition: transform 0.8s ease-in-out,
+          background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+        background: #4b7adf;
+      }
+    }
+
+    .heading-home,
+    .heading-admin {
+      display: inline-flex;
+      flex-flow: column;
+      vertical-align: middle;
+      margin-left: 10px;
+      padding-left: 10px;
+      font-size: 0.9375rem;
+    }
+  }
+
+  .home-stats-head {
+    height: 120px;
+    margin: 15px auto;
+    border-radius: 30px;
+    box-shadow: 0 26px 120px rgb(0 0 0 / 4%);
+    transition: transform 0.8s ease-in-out, background-color 0.3s ease-in-out,
+      color 0.3s ease-in-out, background-image 0.3s ease-in-out;
+    background-image: url('https://cgt-dev-ft.microsysx.com/assets/media/bg/bg-hover-blue.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .stats {
+    color: #233151;
+    text-decoration: none;
+    margin: 15px auto;
+    box-shadow: 0 26px 120px rgb(0 0 0 / 4%);
+    border-radius: 22px;
+
+    .completed,
+    .in-process,
+    .booked,
+    .spoilage {
+      width: 20px;
+      height: 22px;
+      position: absolute;
+      border-radius: 10px;
+    }
+    .completed {
+      background: #28ced9;
+    }
+    .in-process {
+      background: #2255c2;
+    }
+    .booked {
+      background: #f4b71a;
+    }
+    .spoilage {
+      background: #fa6363;
+    }
+
+    .number {
+      margin-left: 1.5rem;
+    }
+  }
+
+  .white-card {
+    text-decoration: none;
+    margin: 3% auto;
+    box-shadow: 0 26px 120px rgb(0 0 0 / 4%);
+    color: #233151;
+    border-radius: 22px;
+    background-color: #fff;
+    padding: 0.5rem;
+  }
+
+  .red-div-size {
+    margin-bottom: -20px;
+    .white-card {
+      text-decoration: none;
+      margin: 3% auto;
+      box-shadow: 0 26px 120px rgb(0 0 0 / 4%);
+      color: #233151;
+      border-radius: 22px;
+      background-color: #fff;
+      padding: 0.5rem;
+    }
+  }
+  .search-dropdown {
+    width: 100%;
+  }
+
+  .ant-select-selection--single {
+    background-color: #f9f9f9;
+    height: 55px;
+  }
+
+  .ant-select-selection__rendered {
+    display: block;
+    padding-left: 8px;
+    padding-right: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #464e5f;
+    line-height: 52px;
+  }
+
+  .chart-container {
+    margin-right: 20px;
+  }
+  .chart-right-stats {
+    padding-top: 25px;
+  }
+
+  .chartjs-render-monitor {
+    height: 80px !important;
+  }
+  .ant-select-selection__placeholder,
+  .ant-select-search__field__placeholder {
+    left: 10px;
+  }
+}
+
+.treatment-statistic {
+  background: #3869d1 !important;
+  border-radius: 22px;
+  height: 120px;
+  width: 97%;
+  margin: auto;
+  .home-stats-head {
+    padding: 18px;
+    height: 120px;
+    margin: 15px auto;
+    background-color: transparent !important;
+    box-shadow: 0 26px 120px rgb(0 0 0 / 4%);
+    transition: transform 0.8s ease-in-out, background-color 0.3s ease-in-out,
+      color 0.3s ease-in-out, background-image 0.3s ease-in-out;
+    background-image: url('https://cgt-dev-ft.microsysx.com/assets/media/bg/bg-hover-blue.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .stats {
+    color: #233151;
+    text-decoration: none;
+    margin: 0;
+    // margin-top: 10px;
+    // margin-left: 20px;
+    // margin-right: 20px;
+    box-shadow: 0 26px 120px rgb(0 0 0 / 4%);
+    border-radius: 15px;
+    .completed,
+    .in-process,
+    .booked,
+    .spoilage {
+      width: 20px;
+      height: 22px;
+      position: absolute;
+      border-radius: 10px;
+    }
+    .completed {
+      background: #28ced9;
+    }
+    .in-process {
+      background: #2255c2;
+    }
+    .booked {
+      background: #f4b71a;
+    }
+    .spoilage {
+      background: #fa6363;
+    }
+
+    .number {
+      margin-left: 1.5rem;
+    }
+  }
+
+  .search-dropdown {
+    width: 100%;
+  }
+
+  .ant-select-selection--single {
+    background-color: #f9f9f9;
+    height: 55px;
+  }
+
+  .ant-select-selection__rendered {
+    display: block;
+    padding-left: 8px;
+    padding-right: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #464e5f;
+    line-height: 52px;
+  }
+
+  .chart-container {
+    margin-right: 20px;
+  }
+  .chart-right-stats {
+    padding-top: 25px;
+  }
+
+  .chartjs-render-monitor {
+    height: 80px !important;
+  }
+  .ant-select-selection__placeholder,
+  .ant-select-search__field__placeholder {
+    left: 10px;
+    color: black;
+  }
+}
+.administration-tab {
+  .home-page {
+    .home-tab,
+    .admin-page,
+    .admin-tab {
+      margin: 3% !important;
+    }
+  }
+}
+
+.enrollment-page {
+  .ant-tabs-left-bar {
+    .ant-tabs-tab {
+      padding: 8px 15px !important;
+      margin-bottom: 0 !important;
+    }
+  }
+}
+//
+.sample-tabs-small {
+  width: 100%;
+  .ant-table-thead {
+    display: none;
+  }
+  .ant-tabs-nav-scroll {
+    text-align: right !important;
+    .ant-tabs-nav {
+      width: 100%;
+    }
+  }
+  .ant-pagination.ant-table-pagination{
+    display: none;
+  }
+  .ant-tabs.ant-tabs-top {
+    .ant-tabs-top-bar  {
+      margin-bottom: 0;
+    }
+    // height: 47px;
+    .ant-tabs-nav-container {
+      padding: 0;
+     
+      .ant-tabs-tab {
+        width: 48% !important;
+        margin-bottom: 0;
+        margin-right: 5px !important;
+        height: 37px !important;
+        // width: 125px !important;
+        text-align: center;
+        font-size: 12px !important;
+        font-weight: 600 !important;
+        align-items: center;
+        padding: 0;
+        margin-top: 7px;
+      }
+    }
+  }
+}

@@ -1,0 +1,127 @@
+.grey-card {
+  background-color: #f9f9f9;
+  font-size: 0.875rem;
+  font-weight: bold;
+  border-radius: 44px;
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-top: 3%;
+  padding-bottom: 2%;
+
+  .ant-card {
+    box-shadow: 0 26px 120px rgb(0 0 0 / 4%);
+    border-radius: 30px;
+  }
+  .ant-card-body {
+    padding: 9px;
+    padding-top: 3%;
+  }
+}
+
+
+.grey-card-smart-lab {
+  background-color: #fdfdfd;
+  font-size: 0.875rem;
+  border: none;
+}
+
+.white-card-smart-lab {
+  font-size: 0.875rem;
+  font-weight: bold;
+  margin-top: 10px;
+  border-radius: 15px;
+}
+
+
+.avatar-card {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  @extend .default-border-radius;
+  img {
+    object-fit: inherit;
+  }
+  .ant-card-meta-description,
+  .ant-card-meta-title {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  .anticon-right {
+    position: absolute;
+    right: 15px;
+    top: 0;
+    margin: auto;
+    bottom: 0;
+    height: 18px;
+    font-size: 1.5rem;
+  }
+  //
+  &.bg-danger.white,
+  &.bg-primary.white {
+    color: white;
+    .ant-card-meta-description,
+    .ant-card-meta-title {
+      color: white;
+    }
+  }
+  &.ant-card-hoverable:hover {
+    color: white;
+    @extend .bg-primary;
+    .ant-card-meta-title,
+    .ant-card-meta-description {
+      color: white;
+    }
+  }
+}
+
+.default-card {
+  border-radius: 22px;
+  padding: 10px 15px;
+  box-shadow: 0 26px 120px rgb(0 0 0 / 4%);
+}
+
+.specific-card {
+  padding-left: 70px;
+  padding-right: 70px;
+}
+.default-card-x > .ant-card-body {
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.bags_section {
+  .view-screen {
+    .ant-card-body {
+      .ant-tabs-tab {
+        padding: 0 !important;
+      }
+    }
+  }
+  .ant-tabs.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab-active{
+    margin-left: 30px;
+  }
+}
+.mt-15.view-screen {
+  .ant-card-body {
+    .ant-tabs {
+      .ant-tabs-nav-scroll {
+        text-align: center;
+        .ant-tabs-tab {
+          margin: 3px !important;
+        }
+      }
+    }
+  }
+}
+// 
+.add_storage {
+  .ant-table-tbody {
+    td:first-child {
+      text-align: initial;
+    }
+  }
+}
+.logistic_board {
+  .grey-card {
+    padding-top: 0 !important;
+  }
+}

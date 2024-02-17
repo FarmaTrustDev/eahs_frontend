@@ -1,0 +1,1122 @@
+@import './partials/variables';
+@import './partials/color';
+@import './partials/mixin';
+@import './partials/margin';
+@import './partials/padding';
+@import './partials/grid';
+@import './partials/background-color';
+@import './partials/btn';
+@import './partials/helpers';
+@import './partials/border';
+@import './partials/cards';
+@import './partials/capsules';
+@import './partials/modal';
+@import './partials/formsFields';
+@import './partials/tabs';
+@import './partials/buttons';
+@import './partials/tables';
+@import './partials/_tempFile';
+@import './partials/_steps';
+@import './partials/calendar';
+@import './partials/shadow';
+@import './components/sidebar';
+@import './components/login';
+@import './components/header';
+@import './components/patient-page';
+@import './components/labels';
+@import './components/home';
+@import './components/chat';
+@import './components/enrollment';
+@import './components/admin';
+@import './components/patient-details';
+@import './components/inventory';
+@import './components/consumables';
+@import './components/logistics';
+@import './components/support';
+@import './components/screening';
+@import './components/forms';
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&display=swap');
+
+body {
+  background-color: white;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+.container {
+  max-width: 1275px;
+  margin: auto;
+  background-color: white;
+}
+.profile-grey-bg {
+  background-color: #ececec;
+  padding: 20px;
+  border-radius: 35px;
+}
+.error-model {
+  button {
+    height: fit-content;
+    span {
+      padding: 5px px 60px;
+      font-size: 16px;
+    }
+  }
+}
+.ant-select-focused .ant-select-selection,
+.ant-select-selection:focus,
+.ant-select-selection:active {
+  border: none !important;
+  box-shadow: none !important;
+}
+.ant-select-open .ant-select-selection {
+  border: none !important;
+  box-shadow: none !important;
+}
+.default-select {
+  .ant-select-selection {
+    // margin-top: -8px;
+  }
+}
+
+.main {
+  padding: 5px;
+  margin-top: 5px;
+}
+
+a {
+  color: $primary-color;
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+.w-125 {
+  width: 123%;
+}
+.border-space {
+  .table {
+    border-spacing: 0 1em;
+  }
+}
+
+.square-table {
+  .ant-table-thead > tr > th,
+  .ant-table-tbody > tr > td {
+    padding: 9px 12px;
+    padding-bottom: 0%;
+    margin: 15px 18px 7px;
+    word-wrap: break-word;
+  }
+
+  .ant-table-content {
+    table {
+      border-collapse: separate;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    table thead tr {
+      border-collapse: collapse;
+      border-style: hidden;
+    }
+    .ant-table-thead tr th {
+      border: unset;
+      padding: 15px;
+      font-weight: bold;
+      text-align: center;
+      .ant-table table {
+        border-spacing: 0 3px;
+      }
+
+      // why repeating code ?? check the below line
+      &:first-child {
+        border-bottom-left-radius: 40px;
+        border-top-left-radius: 40px;
+      }
+      &:last-child {
+        border-bottom-right-radius: 40px;
+        border-top-right-radius: 40px;
+      }
+    }
+
+    .ant-table-row td {
+      &:first-child {
+        border-bottom-left-radius: 40px;
+        border-top-left-radius: 40px;
+      }
+      &:last-child {
+        border-bottom-right-radius: 40px;
+        border-top-right-radius: 40px;
+      }
+    }
+  }
+  .ant-upload-list.ant-upload-list-text {
+    width: 130px;
+    margin: auto;
+    margin-left: -20px;
+
+    .ant-upload-list-item-info {
+      .ant-upload-list-item-name {
+        padding-left: 15px;
+      }
+    }
+  }
+  // .ant-switch.ant-switch-checked {
+  //   height:33px;
+  //   background-color: #3869d1 !important;
+  //   .ant-switch-inner {
+  //     padding: 7px;
+  //     font-size: 15px;
+  //   }
+  //   .ant-switch-checked::after {
+  //     top: 3px;
+  //     height: 23px;
+  //     width: 23px;
+  //   }
+  // }
+}
+// .ant-form-vertical .ant-form-item {
+// padding-bottom: unset;
+// margin-bottom: unset;
+// }
+.square-table .ant-table-tbody {
+  tr:hover:not(.ant-table-expanded-row):not(.ant-table-row-selected) {
+    td {
+      background: #fff;
+    }
+  }
+}
+.page-header {
+  margin-top: -1rem;
+  // margin-bottom: 20px;
+  .selection-tab .ant-select-selection {
+    padding-top: 11px !important;
+  }
+}
+.page-title {
+  font-size: 1.5625rem;
+  font-weight: 600;
+  color: #000;
+}
+.page-title.head {
+  font-weight: 500 !important;
+  padding-left: 3rem;
+}
+.heading {
+  font-size: 1.5625rem;
+}
+.plain-header-border {
+  .ant-card-head {
+    border-bottom: none;
+  }
+}
+.vertical-line {
+  position: absolute;
+  width: 20px;
+  height: 0;
+  border: 1px solid #e9e9e9;
+  transform: rotate(90deg);
+  margin-top: 20px;
+  margin-left: -20px;
+}
+.container-div {
+  width: 100%;
+  display: flex;
+}
+.container-div.main {
+  display: block !important;
+  position: relative;
+  text-align: end;
+  width: fit-content;
+  margin-left: auto;
+}
+.container-steps-div {
+  width: 98%;
+  display: flex;
+}
+.container-steps-div.main {
+  text-align: right !important;
+  // display: block !important;
+  width: 100%;
+}
+.container-drop-down-div {
+  width: 5%;
+  margin-right: 1%;
+  margin-left: auto;
+}
+
+.specific {
+  // for treatment process
+  .page-title {
+    font-size: 1.5625rem;
+    font-weight: 600;
+    // margin-left: 5%;
+  }
+}
+.specific-storage {
+  // for Smart-Lab-Storage
+  .page-title {
+    font-size: 1.5625rem;
+    font-weight: 600;
+    // margin-left: 10px;
+  }
+}
+.inventory-storage-title {
+  .page-title {
+    // margin-left: 12.5%;
+  }
+}
+.vertical-line-standard-table {
+  padding-bottom: 9px;
+  width: 1px;
+  height: 20px;
+  border: 0.3px solid #e9e9e9;
+  margin: 2px 6px 0 0;
+
+  // why do this why so many sci ? @naveed discuss with me
+  // position: absolute;
+  // transform: rotate(90deg);
+  // margin-top: 27px;
+  // margin-left: -15px;
+}
+.support_page {
+  .ant-tabs.ant-tabs-top {
+    padding: 0 !important;
+  }
+  .ant-tabs-nav-scroll {
+    .ant-tabs-tab {
+      margin: 0 4px !important;
+    }
+  }
+  .ant-tabs-nav {
+    .ant-tabs-tab {
+      font-size: 12px !important;
+    }
+    .ant-tabs-tab-active {
+      border: 1px solid #ececec !important;
+      color: black;
+    }
+  }
+  .page-title {
+    font-weight: 400;
+  }
+}
+.ant-pagination {
+  .ant-pagination-item {
+    line-height: 32px;
+  }
+  .ant-pagination-item-link,
+  .ant-pagination-disabled {
+    background: #f0f3ff;
+    zoom: 1.3;
+  }
+  .ant-pagination-item,
+   .ant-pagination-item-link,
+  .ant-pagination-disabled {
+    border-radius: 22px;
+    zoom: 1.3;
+  }
+  .ant-pagination-next,
+  .ant-pagination-prev {
+    border-radius: 22px;
+    zoom: 1.3;
+  }
+  .ant-pagination-item-active {
+    background-color: #fa6363;
+    border: none;
+    a {
+      color: white;
+    }
+  }
+}
+.home-page {
+  .home-tab {
+    width: 97% !important;
+  }
+}
+.home-page.container {
+  .title {
+    margin-bottom: 10px;
+  }
+}
+.org-title {
+  margin-left: 8px;
+  margin-right: 8px;
+
+  .login-logo-x {
+    line-height: 14px;
+    padding: 15px 10px;
+    border-radius: 22px;
+    background-color: #f9f9f9;
+    font-weight: 600;
+  }
+}
+.clearfix.mt-15 {
+  .ant-input:focus {
+    border: 1px solid #ececec !important;
+  }
+}
+.users-list {
+  .ant-btn:active {
+    color: unset !important;
+    background: #ececec;
+  }
+  .ant-btn:hover {
+    color: unset !important;
+    background: #ececec;
+  }
+}
+
+.page-header.clearfix {
+  position: relative;
+  padding: 0 61px 0 22px;
+
+  .page-title.pl-5 {
+    position: absolute;
+    bottom: 0;
+    color: black;
+  }
+  .ant-btn {
+    height: fit-content;
+    padding: 0;
+    span {
+      font-size: 1rem;
+      padding: 13px;
+    }
+  }
+}
+// ==========================
+.patient-page {
+  overflow-x: auto;
+
+  .ant-tabs.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab-active {
+    border: none !important;
+  }
+  .ant-tabs-tab:hover {
+    color: black !important;
+  }
+  .ant-table-row {
+    .action-button.ant-btn {
+      height: fit-content;
+      padding: 7px 10px;
+      color: #000;
+      span {
+        font-size: 13px;
+      }
+      // padding: 13px 15px;
+    }
+    .action-button.ant-btn:hover,
+    .action-button.ant-btn:focus {
+      color: unset !important;
+      background-color: #ececec;
+      border: 1px solid #ececec !important;
+    }
+  }
+  .default-card-x {
+    .ant-alert {
+      width: 75%;
+      margin: auto;
+      background-color: #ececec;
+      border: gray;
+    }
+  }
+}
+.screening-tabs {
+  .ant-tabs-nav-wrap {
+    .ant-table-tbody {
+      .ant-tabs-tab {
+        border: 1px solid #ececec;
+        background-color: white !important;
+      }
+      // .ant-tabs-tab-active {
+      //   background-color: #f2f5fb !important;
+      // }
+      .ant-tabs-tab:hover {
+        color: unset !important;
+      }
+
+      // td {
+      //   font-weight: 500;
+      // }
+    }
+  }
+}
+
+.enrollment-page {
+  .ant-alert-info {
+    padding: 0.75rem 1.25rem;
+    background-color: #e2e3e5;
+    border: 1px solid gainsboro;
+  }
+  // kt-form__actions {
+  //   position: absolute;
+  //   bottom: 0;
+  //   right: 0;
+  // }
+  .ant-alert.ant-alert-no-icon {
+    border: none;
+    background-color: #ececec !important;
+  }
+  textarea.ant-input:focus {
+    border: none;
+  }
+  .ant-calendar-picker.ant-calendar-picker-large {
+    .ant-calendar-picker-input.ant-input {
+      padding-bottom: 5px !important;
+    }
+  }
+  .ant-tabs-content.ant-tabs-content-animated.ant-tabs-left-content {
+    .ant-tabs-nav-container.ant-tabs-nav-container-scrolling {
+      padding: 0;
+    }
+    .ant-tabs-nav {
+      .ant-tabs-tab {
+        margin-right: 7px !important;
+        // width: 32.5%;
+        .ant-tabs-tab-unclosable {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .ant-form.ant-form-vertical {
+    .ant-row.ant-form-item {
+      margin-bottom: 15px !important;
+    }
+  }
+}
+.pick-info {
+  .text-right {
+    color: black;
+    font-weight: bold;
+  }
+}
+.delivery-info {
+  .text-right {
+    color: black;
+    font-weight: bold;
+  }
+}
+.cmnt-msg {
+  // .ant-form-item-control {
+
+  //   background-color: #fff !important;
+  // }
+  #chat_message {
+    background-color: #fff;
+    border: 1px solid #ececec;
+    height: 56px;
+    padding: 8px;
+    border-radius: 42px;
+  }
+}
+.user-involved.support_page {
+  .f {
+    font-weight: 600;
+    font-size: 12px !important;
+  }
+}
+.manf-home {
+  .home-tab {
+    margin: 0 5px 25px 5px;
+  }
+
+  .grey-card > .ant-card-body {
+    padding-top: 0;
+  }
+  .halfNHalf {
+    .white-card.ant-card {
+      padding: 21px 10px;
+      margin-top: 0;
+      margin-bottom: 6% !important;
+    }
+  }
+  .dateTimeBox {
+    font-size: 16px;
+    .daysName {
+      font-weight: 400;
+    }
+  }
+}
+.crdSty{
+  .grey-card .ant-card-body {
+    padding: 9px;
+}
+}
+.donor-home {
+  .home-tab {
+    margin: 20px 5px 25px 110px;
+    padding: 35px 50px;
+    width: 80% !important;
+  }
+
+  .grey-card > .ant-card-body {
+    padding-top: 0;
+  }
+  
+}
+
+.status-smart-lab-pop {
+  background-color: #d1f2dd;
+  border-radius: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-left: 20px;
+  font-size: 15px;
+}
+.status-div {
+  height: 50px;
+  font-size: 20px;
+}
+// ==================================
+.manf-stats {
+  .imageHeading {
+    figure.mtminus-60 {
+      display: flex;
+      align-items: center;
+      figcaption.flex-display {
+        position: unset;
+      }
+    }
+  }
+}
+// ================================
+.manf-treatment {
+  .ant-tabs-top-bar {
+    margin-top: 45px;
+    .ant-tabs-nav-container {
+      .ant-tabs-nav-wrap {
+        text-align: center;
+        .ant-tabs-nav {
+          padding: 0;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+//
+.ant-calendar-picker-clear,
+.ant-calendar-picker-icon {
+  top: 46%;
+}
+//
+.bags_section > .ant-tabs-bar.ant-tabs-top-bar.ant-tabs-card-bar {
+  margin: 25px;
+  margin-bottom: 16px;
+  margin-top: 0;
+  padding: 0 45px;
+  .ant-tabs-tab-active {
+    margin-left: 0;
+  }
+}
+
+//
+.toggle_record {
+  margin-bottom: 1px;
+  padding-left: 0;
+  width: 50px;
+  height: 25px;
+  border-radius: 6px;
+  background-color: white;
+  border:1px solid rgba(0, 0, 0, 0.1);
+  .ant-switch-inner{
+    color: black;
+    margin-right: 1px;
+  }
+  // border-top:1px solid #000;
+  // border-bottom:1px solid #000;
+  // border-left:1px solid #030303;
+  // border-right:1px solid #030303;
+  &::after {
+    width: 25px;
+    height: 25px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-top-right-radius: 1px 1px;
+    border-bottom-right-radius: 1px 1px;
+    margin-left: -1px;
+    margin-top: -2px;
+    box-shadow: none;
+    background-color: #FA6363;
+  }
+}
+.toggle_record.ant-switch-checked {
+  background-color: white;
+  .ant-switch-inner{
+    margin-left: -24px;
+    color: black;
+  }
+  &::after{
+    background-color: #3869d1;
+  width: 25px;
+  height: 25px;
+  margin-left: 0;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-top-left-radius: 1px 1px;
+  border-bottom-left-radius: 1px 1px;
+  }
+}
+
+//
+.ant-tabs-vertical.ant-tabs-card.ant-tabs-left
+  .ant-tabs-card-bar.ant-tabs-left-bar
+  .ant-tabs-tab-active {
+  padding-right: 0;
+}
+//
+.square-table.collect-sample-data.ant-table-wrapper {
+  .ant-table-row {
+    div.ant-row.ant-form-item {
+      margin-bottom: 2px;
+    }
+  }
+}
+
+// ================== SMARTLAB ======================
+.smartlab_task {
+  .treatment-steps {
+    .ant-steps-item {
+      margin-right: 0 !important;
+      margin-left: 7px !important;
+      .ant-steps-item-title {
+        margin: 0 14px 0 0 !important;
+      }
+    }
+  }
+  .ant-steps-item-finish {
+    background-color: #cbf3e0;
+  }
+}
+.smartlab_task_inner {
+  .float-right {
+    .text-muted {
+      color: #000;
+      font-weight: 600;
+    }
+  }
+}
+//
+.inbound-accept-tabs.tabs_body {
+  .ant-card-body {
+    padding: 0 !important;
+  }
+  .ant-steps-small.ant-steps-label-horizontal {
+    margin-top: 0;
+  }
+  .ant-steps-item.ant-steps-item-wait.ant-steps-horizontal-large {
+    margin-right: 0 !important;
+  }
+  .ant-steps-item {
+    margin: 5px !important;
+    .ant-steps-item-title {
+      font-size: 15px !important;
+    }
+  }
+}
+//
+.steps-green {
+  .step-bar {
+    border: 2px solid #1bb558;
+  }
+}
+.smartlab_home {
+  .halfNHalf {
+    .white-card.ant-card {
+      margin-top: 0;
+      padding: 20px;
+    }
+  }
+}
+.Component_body {
+  .default-border-radius > .ant-card-head {
+    padding: 0 !important;
+  }
+}
+//
+.home-page.manf-board {
+  .ant-select-search--inline {
+    .ant-select-search__field {
+      position: absolute;
+      margin-top: -10px !important;
+    }
+  }
+}
+// =======================
+// td.status-sample.status-sample {
+//   position: relative;
+//   color: black;
+// }
+// td.status-sample.status-sample::after {
+//   content: "";
+//   background: #f2f2a26b;
+//   display: block;
+//   width: 88px;
+//   height: 38px;
+//   position: absolute;
+//   top: 7px;
+//   left: 12px;
+//   border-radius: 20px;
+// }
+.status-sample {
+  #tag1 {
+    background-color: #ffdbdb;
+    padding: 10px 26px;
+    border-radius: 22px;
+  }
+  #tag2 {
+    background-color: #ddffd2;
+    padding: 10px 18px;
+    border-radius: 22px;
+  }
+}
+
+.center-container {
+  max-width: 1275px;
+  margin: auto;
+  .sample-container  {
+    .center-container{
+      max-width: 100%;
+    }
+  }
+}
+
+.side-menu::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #f5f5f5;
+}
+
+.side-menu::-webkit-scrollbar-thumb {
+  background-color: #969696;
+}
+.side-menu::-webkit-scrollbar {
+  width: 3.5px;
+  background-color: #f5f5f5;
+}
+
+.sidebar:hover {
+  ul.side-menu::-webkit-scrollbar {
+    width: 5px;
+  }
+}
+.sample-shipping-detail > div > div.ant-tabs {
+  width: 100%;
+}
+.anticon-down {
+  margin-left: 4px !important;
+}
+.wd-10{
+  width:160px;
+}
+.wd-180{
+  width: 180px;
+}
+.wd-16{
+  width:160px;
+}
+.topClass{
+  margin-top: 12px;
+}
+.selChange{
+  .ant-form-item-control input, .ant-form-item-control textarea, .ant-form-item-control .ant-select-selection--single {
+    border-radius: 1px;
+    height:30px;
+    padding: 0 0 0 0;
+    margin-bottom: 1px;
+    background-color: white;
+}
+}
+.mSize{
+  margin-bottom: 2px;
+}
+.borderStyle{
+  border-radius: 25px;
+}
+.hgtBtn{
+  height: 35px;
+}
+.wd-12{
+  width:140px;
+}
+.wd-11{
+  width: 130px;
+  height: 35px;
+}
+.wd-200 {
+  width: 200px;
+}
+.wd-17{
+  width: 150px;
+  height: 55px;
+}
+.wd-13{
+  width: 150px;
+  height: 35px;
+}
+.wd-70{
+  width:70%;
+}
+.wd-100{
+  width: 100% !important;
+}
+.mt-45{
+  margin-top:-45px
+}
+.Pt-10{
+padding-top: 10px;
+padding-left: 10px;
+}
+.bg-white{
+  background-color: white;
+}
+.bg-g{
+  background-color: #f5f5f5;border-radius: 0%;
+}
+.mt-30{
+  margin-top:-30px;
+  padding-left: 15px;
+}
+.mt-20{
+  margin-top:-20px;
+  padding-left: 15px;
+}
+.mg-t-20 {
+  margin-top: 20px;
+}
+.selChangeSelect{
+  .ant-form-item-control input, .ant-form-item-control textarea, .ant-form-item-control .ant-select-selection--single {
+    border-radius: 5px;
+    height:33px;
+    background-color: white;
+    padding: 0 0 0 0;
+    margin-bottom: 1px;
+}
+}
+.selChangeSelectLogistic{
+  .ant-form-item-control input, .ant-form-item-control textarea, .ant-form-item-control .ant-select-selection--single {
+    border-radius: 5px;
+    height:33px;
+    background-color: white;
+    padding: 0 0 0 0;
+    margin-bottom: 1px;
+}
+}
+.orderButton{
+  // width: 100px;
+  border-radius: 40px;
+  height: 40px;
+  background-color: antiquewhite;
+}
+.mg-t-10{
+  margin-top: 5px;
+  margin-left: 15px;
+}
+.editButton{
+  width: 80px;
+  border-radius: 40px;
+  height: 30px;
+  background-color: #FFF8E5;
+  border: none;
+  margin-top: -3px;
+  &:hover{
+    background-color: #FFF8E5;
+    color: black;
+  }
+}
+.removeButton{
+  border-radius: 40px;
+  height: 30px;
+  background-color: #FFDBDB;
+  border: none;
+  margin-top: -3px;
+  &:hover{
+    background-color: #FFDBDB;
+    color: black;
+  }
+}
+.approvedButton{
+  width: 100px;
+  border-radius: 40px;
+  height: 30px;
+  margin-top: -3px;
+  background-color: #D1F2DD;
+  border: none;
+  &:hover{
+    background-color: #D1F2DD;
+    color: black;
+  }
+}
+
+.plusButon{
+  width: 40px;
+  border-radius: 40px;
+  height: 30px;
+  margin-top: -3px;
+  background-color: white;
+  border: none;
+}
+.showQuantity{
+  width: 40px;
+  border-radius: 40px;
+  height: 30px;
+  margin-top: -3px;
+  background-color: white;
+  border: none;
+  border: 3px solid #f5f5f5 ;
+}
+.consentClass{
+  background-color: white;
+  border-radius: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  height:50px;
+  border-top: 2px solid #D9D9D9;
+  border-bottom: 2px solid #D9D9D9;
+  border-left: 2px solid #D9D9D9;
+  border-right: 2px solid #D9D9D9;
+}
+.deliveryClass{
+  background-color: white;
+  border-radius: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  height:50px;
+  border-top: 2px solid #D9D9D9;
+  border-bottom: 2px solid #D9D9D9;
+  border-left: 2px solid #D9D9D9;
+  border-right: 2px solid #D9D9D9;
+}
+.uploadMed{
+  width: 130px;
+  border-radius: 40px;
+  height: 40px;
+  background-color: #FFF8E5;
+  border: none;
+  &:hover{
+    background-color: #FFF8E5;
+    color: black;
+  }
+}
+.removBackCol{
+  border-radius: 40px;
+  height: 40px;
+  background-color: #FFDBDB;
+  border: none;
+  &:hover{
+    background-color: #FFDBDB;
+    color: black;
+  }
+}
+.txtClas{
+  font-size: 20px;
+  font-weight: 400;
+  color: black;
+}
+.txtClas2{
+  font-weight: 500;
+  color: black;
+}
+.txtClas3{
+  font-weight: 200;
+  color: black;
+}
+.txtBoxSt{
+  height: 45px;
+  width:75px;
+  border-radius: 1px;
+  margin-bottom: 10px;
+}
+.txtBoxSt1{
+  height: 45px;
+  border-radius: 1px;
+  margin-bottom: 10px;
+}
+.txtClass4{
+  font-weight: 200;
+}
+.txBoxStyWhite{
+  .ant-form-item-control input, .ant-form-item-control textarea, .ant-form-item-control .ant-select-selection--single {
+    border-radius: 1px;
+    height:33px;
+    background-color: white;
+    margin-top: 16px;
+    margin-left: 19px;
+    margin-bottom: 19px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+}
+.txAreaStyWhite{
+  .ant-form-item-control input, .ant-form-item-control textarea, .ant-form-item-control .ant-select-selection--single {
+    border-radius: 1px;
+    height:133px;
+    background-color: white;
+    margin-top: 16px;
+    margin-left: 19px;
+    margin-bottom: 19px;
+    margin-right: 9px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+}
+.h-45{
+  height: 45px;
+}
+.h-30{
+  height: 30px;
+}
+.h-50{
+  height: 65px;
+}
+.h-150{
+  height: 165px;
+}
+.w-713{
+  width: 713px;
+}
+.ml-m3{
+  margin-left: -3px;
+}
+.sel-validation{
+  color:rgb(245, 34, 45)
+}
+.roleClas{
+  margin-left:200px;margin-top:-50px
+}
+.fl-rt{
+  float: right;
+}
+.consentSearch{
+  margin-right: 455px;width:280px;height: 40px;border-radius: 20px;
+}
+.manf-project-step {
+  .ant-tabs-top-bar {
+    margin-top: 45px;
+    .ant-tabs-nav-container {
+      .ant-tabs-nav-wrap {
+        text-align: left;
+        .ant-tabs-nav {
+          padding: 0;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.consent-btn{
+      width: 100px;
+      align-items: right;
+      border-radius: 40px;
+      height: 30px;
+      background-color: #D1F2DD;
+      border: none;
+      padding-top: 3.5%;
+}
+
+.wd-11btn{
+  width: 100px;
+  height: 35px;
+  margin-top: -5px;
+}

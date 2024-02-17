@@ -1,0 +1,225 @@
+.logistic_tabs {
+  .ant-tabs-bar {
+    border: 0;
+  }
+  .ant-tabs-nav.ant-tabs-nav-animated {
+    width: 100%;
+  }
+  .ant-tabs-tab:nth-child(1)::after {
+    content: ' ';
+    width: 3px;
+    height: 34px;
+    display: inline-block;
+    position: absolute;
+    background: #bab9b97d;
+    right: -11px;
+    top: 5px;
+  }
+  .ant-tabs-tab {
+    width: 48%;
+    border-radius: 44px;
+    border: 1px solid #ececec;
+    text-align: center;
+    margin: 0;
+    margin-right: 18px !important;
+  }
+  .ant-tabs-tab-active {
+    border: 1px solid #a3c9ff !important;
+    margin: 2px;
+    color: #3869d1;
+    background-color: #f2f5fb;
+  }
+  .ant-tabs-ink-bar.ant-tabs-ink-bar-no-animated {
+    display: none !important;
+  }
+  .ant-calendar-picker-input.ant-input {
+    margin-top: 0;
+  }
+}
+//
+.manf-treatment {
+  .ant-table-tbody {
+    .ant-btn {
+      height: 40px !important;
+    }
+  }
+}
+// -------------
+.screening-tabs {
+  .ant-tabs-nav-wrap {
+    .ant-table-tbody {
+      .ant-tabs-tab-active {
+        background-color: #f2f5fb !important;
+      }
+    }
+  }
+}
+// -------------
+
+.patient-page {
+  .treatment-process {
+    td {
+      border-top: 0;
+      border-right: 0 !important;
+    }
+    .ant-table-row.ant-table-row-level-0 {
+      td {
+        padding-top: 0 !important;
+        font-weight: bold;
+        .ant-row.ant-form-item {
+          margin: 5px 0;
+          padding: 8px;
+        }
+        .ant-form-item-children {
+          i.anticon.anticon-check {
+            color: green;
+            font-size: 18px;
+            font-weight: 900;
+          }
+        }
+      }
+    }
+    .ant-table-row {
+      // td {
+      //   border-top: 0;
+      //   border-right: 0 !important;
+      // }
+      .square-table .ant-table-content .ant-table-row td:last-child {
+        border-bottom-left-radius: 0 !important;
+        border-top-left-radius: 0 !important;
+        border-left: 0;
+        border-right: 0;
+      }
+      .ant-table-row-cell-break-word {
+        border-bottom-left-radius: 0 !important;
+        border-top-left-radius: 0 !important;
+        border-left: 0;
+        border-right: 0;
+      }
+    }
+    // .ant-upload-list-item-name.ant-upload-list-item-name-icon-count-1 {
+    //   width: 130px;
+    // }
+  }
+}
+// ============
+.support.container {
+  .ant-card-head-title {
+    padding: 0;
+  }
+  .chat-page {
+    .chat-list {
+      .ant-spin-container {
+        min-height: 240px;
+      }
+    }
+  }
+}
+.support.container:last-child {
+  padding-top: 0;
+}
+// SMARTLAB
+.smartlab_task {
+  .ant-tabs-nav-scroll {
+    .ant-tabs-tab {
+      margin-right: 25px !important;
+      padding: 2px 22px !important;
+    }
+  }
+}
+//
+.treatment-list-body {
+  .ant-tabs-nav-container {
+    .ant-tabs-tab {
+      font-size: 1rem !important;
+    }
+  }
+}
+//
+.view-screen {
+  .pills-tabs.no-shadow {
+    .ant-tabs-tab {
+      margin: 5px 7px 2px 5px !important;
+    }
+    .ant-tabs-tab:focus {
+      // background-color: transparent !important;
+      box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
+    }
+  }
+}
+
+//
+.treatment-steps.manufacturer-step {
+  .ant-steps-item {
+    // border: 1px solid #ececec;
+    padding: 9px 5px !important;
+  }
+  .ant-steps-item.ant-steps-item-process {
+    width: 170px !important;
+  }
+  // .ant-steps-item-finish {
+  //   padding-bottom: 6px !important;
+  // }
+  .ant-steps-item.ant-steps-item-process.ant-steps-item-active {
+    border: 0;
+  }
+  .ant-steps-small.ant-steps-horizontal:not(.ant-steps-label-vertical)
+    .ant-steps-item {
+    margin-left: 0 !important;
+  }
+}
+.admin-btn {
+  span {
+    padding: 12px 15px !important;
+  }
+}
+//
+.header-page {
+  .ant-card-head-wrapper {
+    div {
+      padding: 0;
+    }
+  }
+}
+
+.plain-header-border.specific.container {
+  .ant-card-head-wrapper {
+    div {
+      margin-top: 10px;
+      padding: 0;
+    }
+  }
+}
+//
+.step-col {
+  .ant-steps-small .ant-steps-item-title {
+    font-size: 12px !important;
+    margin-top: 5px;
+    // min-width: 150px;
+    &::after {
+      display: none;
+    }
+  }
+}
+.ant-steps-small {
+.ant-steps-item-finish {
+  .ant-steps-item-content::before {
+    border: 3px solid #fff;
+  }
+}
+}
+//
+.notes-body {
+  .ant-form-item-control {
+    margin: 6px;
+    margin-left: 10px;
+    text-align: left;
+    input {
+      background-color: transparent;
+      padding-bottom: 12px;
+      &:focus {
+        border: none;
+      }
+    }
+  }
+}

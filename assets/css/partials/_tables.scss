@@ -1,0 +1,177 @@
+.rounded-table {
+  table {
+    border-collapse: separate;
+    border-spacing: 0 1em;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  table thead tr {
+    border-collapse: collapse;
+    border-style: hidden;
+    border-radius: 22px;
+    margin-top: 2rem;
+  }
+
+  .ant-table-thead tr th {
+    padding: 12px;
+    padding-left: 7px;
+    padding-right: 7px;
+    background-color: #eeebeb;
+    border-top: 2px solid #D9D9D9 !important;
+    border-bottom: 2px solid #D9D9D9 !important;
+    font-weight: bold;
+    text-align: center;
+    &:first-child {
+      border-bottom-left-radius: 25px;
+      border-top-left-radius: 25px;
+    }
+    &:last-child {
+      border-bottom-right-radius: 25px;
+      border-top-right-radius: 25px;
+    }
+  }
+
+  .ant-table-tbody td {
+    padding: 15px 3px; // check patient list before changing it
+    font-size: 0.875rem;
+    vertical-align: middle;
+    color: #233151;
+    border-top: 2px solid #D9D9D9 !important;
+    border-bottom: 2px solid #D9D9D9 !important;
+    font-weight: 400;
+    &:hover {
+      background-color: #fff;
+      cursor: pointer;
+    }
+    &:first-child {
+      border-bottom-left-radius: 20px;
+      border-top-left-radius: 20px;
+      font-weight: bold;
+    }
+    &:last-child {
+      border-bottom-right-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+    span.treatmentName {
+      width: 80px;
+    }
+  }
+
+  .ant-table-tbody tr {
+    border-collapse: collapse;
+    border-style: hidden;
+    // box-shadow: 0 0 0 1px #e2e2e2;
+    border-radius: 44px;
+    margin-top: 2rem;
+    color: #909090;
+    &:hover {
+      background-color: #fff !important;
+      cursor: pointer;
+      td {
+        background-color: #fff !important;
+      }
+    }
+  }
+}
+.ant-form-item-children {
+#patientEnrollment_Reference_Id,#patientEnrollment_patient_Id, #patientEnrollment_status_Id,#patientEnrollment_priority {
+  .ant-select-selection.ant-select-selection--single{
+    margin-bottom: 0 !important;
+  }
+}}
+.grey-card.enrollment-page.green-on-update {
+  .ant-select-selection {
+    margin-bottom: 0;
+  }
+}
+
+.project .rounded-table table{
+  text-align: left;
+}
+.default-tabs-col {
+  .ant-tabs {
+    .ant-tabs-left-bar,
+    .ant-tabs-right-bar {
+      .ant-tabs-tab {
+        padding-left: 50px;
+        text-align: left;
+        height: auto;
+        background-color: #f9f9f9;
+        border-radius: 12px !important;
+        width: 175px;
+        // margin: auto;
+         &::before {
+           content: '';
+           position: absolute;
+           height: 28px;
+           width: 28px;
+           left: 7px;
+           top: 50%;
+           bottom: 50%;
+           margin: auto;
+           background-size: 100%;
+          background-image: url(https://cgt-dev-ft.microsysx.com/images/v2/icons/circle.svg);
+         }
+      }
+      .ant-tabs-tab-completed {
+        padding-left: 50px;
+        text-align: left;
+        font-size: 13px;
+        height: auto;
+        background-color: #500a0a;
+        border-radius: 12px !important;
+        width: 175px;
+        // margin: auto;
+         &::before {
+           content: '';
+           position: absolute;
+           height: 28px;
+           width: 28px;
+           left: 7px;
+           top: 50%;
+           bottom: 50%;
+           margin: auto;
+           background-size: 100%;
+          background-image: url(https://cgt-dev-ft.microsysx.com/images/v2/icons/circle.svg);
+         }
+      }
+      .ant-tabs-tab-active {
+        color: #1a1a1b;
+        background-color: #d0ddf8 !important;
+        // padding: 15px 25px;
+        // padding-bottom: 15px !important;
+        &::before {
+          content: '';
+           position: absolute;
+           height: 28px;
+           width: 28px;
+           left: 7px;
+           top: 50%;
+           bottom: 50%;
+           margin: auto;
+           background-size: 100%;
+          background-image: url(https://cgt-dev-ft.microsysx.com/images/v2/icons/circle-active.svg);
+          background-repeat: no-repeat;
+        }
+      }
+    }
+    .ant-tabs-bar {
+      .ant-tabs-tab-completed {
+        background-color: #d1f2dc;
+        &::before {
+          margin-right: 0;
+          background-size: cover;
+          background-image: url('https://cgt-dev-ft.microsysx.com/images/v2/icons/status-done-circle.svg');
+          background-repeat: no-repeat;
+        }
+      }
+    }
+
+    .ant-tabs-left-bar,
+    .ant-tabs-left-content {
+      border: none;
+    }
+  }
+}
+

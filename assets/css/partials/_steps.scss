@@ -1,0 +1,722 @@
+.blockState {
+  position: relative;
+  &::before {
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+  }
+}
+
+
+.amended-category {
+  background: #fffbc8;
+}
+.manufacturer-step {
+  // border: 1px solid red;
+  .step-col::before {
+    left: 0 !important;
+    top: 28px !important;
+  }
+
+  .ant-steps-item {
+    flex: auto;
+    padding-top: 10px;
+    margin-top: auto !important;
+    padding-bottom: 8px;
+  }
+  .ant-steps-item-title {
+    display: inline-block;
+  }
+  .ant-steps-item-wait,
+  .ant-steps-item-finish {
+    .ant-steps-item-title {
+      display: none;
+      border: 1px solid pink;
+    }
+  }
+}
+
+.ant-table-row {
+  // &::before {
+  //   content: '';
+  //   border: 1px solid red;
+  // }
+  td {
+    border-top: 1px solid #e2e2e2;
+    background-color: #fff;
+    border-bottom: 1px solid #e2e2e2 !important;
+  }
+  td:first-child {
+    border-left: 1px solid #e2e2e2;
+  }
+  td:last-child {
+    border-right: 1px solid #e2e2e2;
+  }
+}
+
+
+
+.treatment-steps {
+  position: relative;
+  &::before {
+    content: '';
+    height: 0;
+    position: absolute;
+    width: 80%;
+    margin: auto;
+    left: 0;
+    // top: 48%;
+    right: 0;
+    background-color: #e2e2e2;
+  }
+
+  .ant-btn-drop-down {
+    margin-top: auto;
+    bottom: -3px;
+  }
+
+  .container-steps-div {
+    min-width: 743px;
+    padding: 0;
+    margin-top: 0;
+    .rounded-table .ant-table-tbody td {
+      padding: 5px;
+    }
+  }
+  .ant-steps-item {
+    padding: 5px 3px;
+    border: 0;
+    font-size: 0.75rem;
+    color: #233151;
+    border-radius: 22px;
+    cursor: pointer;
+    padding-right: 2px;
+    margin: auto 0;
+  }
+
+  .ant-steps-item-wait {
+    // margin-left: 15px; why ?
+    background-color: #f9f9f9;
+  }
+
+  .ant-steps {
+    // margin-top: 8px;
+  }
+
+  .treatment-name-col {
+    vertical-align: middle;
+    margin-top: 16px;
+    min-width: 80px;
+    font-size: 0.6875rem;
+  }
+
+  .step-col {
+    display: inline-flex;
+    overflow: hidden;
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      width: 85%;
+      top: 19px !important; // Task list steps line was disturbed for that it has been adjusted from 24 to 15
+      // bottom: 0;
+      margin: auto;
+      height: 2px;
+      left: 2px;
+      background-color: #d8d8d8;
+    }
+    // .ant-steps-small.ant-steps-label-horizontal {
+    // display: block !important;
+    // }
+    .ant-steps-item {
+      margin-right: 8px !important;
+      padding-right: 20px;
+      margin-bottom: 4px;
+      margin-top: 4px;
+    }
+    .Treatments {
+      padding-right: 5px;
+    }
+  }
+  .step-col-logistic {
+    display: inline-flex;
+    overflow: hidden;
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      width: 80%;
+      top: 17px;
+      // bottom: 0;
+      margin: auto;
+      height: 2px;
+      left: 70px;
+      background-color: #bebfcb;
+    }
+    // .ant-steps-small.ant-steps-label-horizontal {
+    // display: block !important;
+    // }
+    .ant-steps-item {
+      // margin-right: 8px !important;
+      padding-right: 3px;
+    }
+  }
+  .step-col-large {
+    display: inline-flex;
+    overflow: hidden;
+    position: relative;
+    margin-top: 14px;
+    width: 100%;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 90%;
+      top: 1px;
+      bottom: 0;
+      margin: auto;
+      height: 3px;
+      left: 5%;
+      background-color: #bebfcb;
+    }
+  }
+  .ant-steps-item-icon {
+    display: none;
+  }
+
+  .sep-line {
+    &::after {
+      margin-top: 16px;
+      display: inline-block;
+      // height: 1px;
+      // background: #e8e8e8;
+      content: '';
+      width: 10px;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  .sep-line-default {
+    &::after {
+      background-color: #bebfcb;
+    }
+  }
+
+  .sep-line-active {
+    &::after {
+      background-color: #1890ff;
+    }
+  }
+
+  .ant-steps-item-content {
+    // margin-right: 5px;
+    .ant-steps-item-title {
+      height: 23px;
+      margin: 0;
+      // padding-right: 6px;
+      // margin-left: 5px;
+      // margin-right: 5px;
+
+      // color: #233151 !important;
+      // width: -1px;
+    }
+    &::before {
+      content: '';
+      height: 20px;
+      width: 20px;
+      margin-left: 5px;
+      margin-right: 3px;
+      // margin-top: -3px;
+      display: inline-block;
+      vertical-align: middle;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-image: url(https://cgt-dev-ft.microsysx.com/images/v2/icons/circle.svg);
+    }
+  }
+
+  .dead {
+    .ant-steps-item {
+      background: #ffdbdb;
+    }
+    .ant-steps-item-content {
+      &::before {
+        content: '';
+        background-image: url(https://cgt-dev-ft.microsysx.com/images/v2/icons/circle.svg) !important;
+        background-repeat: no-repeat;
+      }
+    }
+    .ant-steps {
+      @extend .blockState;
+    }
+  }
+
+  .hold {
+    .ant-steps-item {
+      background: #fffbc8;
+    }
+    .ant-steps {
+      @extend .blockState;
+    }
+    .ant-steps-item-content {
+      &::before {
+        content: '';
+        background-image: url(https://cgt-dev-ft.microsysx.com/images/v2/icons/circle.svg) !important;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+
+  .rejected {
+    background: #ffd8d8 !important;
+    .ant-steps-item-content {
+      &::before {
+        content: '';
+        background-image: url(https://cgt-dev-ft.microsysx.com/images/v2/icons/circle.svg) !important;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+  .cancel {
+    .ant-steps-item {
+      background: #ffd8d8;
+    }
+    .ant-steps {
+      @extend .blockState;
+    }
+    .ant-steps-item-content {
+      &::before {
+        content: '';
+        background-image: url(https://cgt-dev-ft.microsysx.com/images/v2/icons/circle.svg) !important;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+
+  .ant-steps-item-finish {
+    // padding: 7px !important;
+    background: #d1f2dc;
+    .ant-steps-item-content {
+      &::before {
+        width: 19px;
+        // border: 3px solid white;
+        border-radius: 15px;
+        height: 19px;
+        // margin-left: 10px;
+        background-image: url(https://cgt-dev-ft.microsysx.com/images/v2/icons/status-done-circle.svg);
+        background-repeat: no-repeat;
+      }
+    }
+  }
+
+  .ant-steps-item-error {
+    background: #ffd8d8;
+    margin-left: 10px;
+    .ant-steps-item-content {
+      margin-left: 5px;
+
+      &::before {
+        content: '';
+        background-image: url(http://demoapi.qmaid.co/web/icons/alarm.png);
+        background-repeat: no-repeat;
+      }
+    }
+  }
+
+  .ant-steps-item-error-large {
+    background: #ffd8d8;
+    margin-left: 2%;
+    border-radius: 20px;
+    height: 60px;
+    min-width: 30%;
+    .ant-steps-item-content {
+      margin-left: 5%;
+      font-weight: 400;
+      font-size: 1.8rem;
+      .ant-steps-item-title {
+        font-size: large;
+        font-weight: 400;
+        margin-left: 4%;
+      }
+      &::before {
+        margin-top: 1px;
+        width: 30px;
+        height: 30px;
+        background-image: url(http://demoapi.qmaid.co/web/icons/alarm.png);
+        background-repeat: no-repeat;
+      }
+    }
+  }
+
+  .ant-steps-item-active-large {
+    background-color: #d1f2dc;
+    margin-left: 2%;
+    border-radius: 20px;
+    height: 60px;
+    min-width: 30%;
+    .ant-steps-item-content {
+      font-weight: 600;
+      font-size: 1.8rem;
+      .ant-steps-item-title {
+        font-size: large;
+        font-weight: 400;
+        margin-left: 4%;
+      }
+      &::before {
+        margin-top: 3px;
+        width: 35px;
+        height: 35px;
+        background-image: url(https://cgt-dev-ft.microsysx.com/images/v2/icons/status-done-circle.svg);
+      }
+    }
+  }
+  .ant-steps-item-active {
+    background-color: #f2f5fb;
+    .ant-steps-item-content {
+      // margin-left: 5px;
+      &::before {
+        // margin: 0;
+        // margin-left: 15px;
+        background-image: url(https://cgt-dev-ft.microsysx.com/images/v2/icons/circle-active.svg);
+        background-repeat: no-repeat;
+      }
+    }
+  }
+
+  .afterCare {
+    background-color: #d1f2dc !important;
+    .ant-steps-item-content {
+      &::before {
+        background-image: url(https://cgt-dev-ft.microsysx.com/images/v2/icons/status-done-circle.svg);
+      }
+    }
+  }
+  .ant-steps-item-finish-large {
+    background: #d1f2dc;
+    margin-left: 2%;
+    border-radius: 20px;
+    height: 60px;
+    min-width: 30%;
+    .ant-steps-item-content {
+      font-weight: 600;
+      font-size: 1.8rem;
+      .ant-steps-item-title {
+        font-size: large;
+        font-weight: 400;
+        margin-left: 4%;
+      }
+      &::before {
+        margin-top: 3px;
+        width: 35px;
+        height: 35px;
+        background-image: url(https://cgt-dev-ft.microsysx.com/images/v2/icons/status-done-circle.svg);
+      }
+    }
+  }
+
+  .ant-steps-item-active-blue-large {
+    background-color: #d1e8f2;
+    margin-left: 2%;
+    border-radius: 20px;
+    height: 60px;
+    min-width: 30%;
+    .ant-steps-item-content {
+      margin-left: 20px;
+      font-weight: 400;
+      font-size: 1.8rem;
+      .ant-steps-item-title {
+        font-size: large;
+        font-weight: 400;
+        margin-left: 4%;
+        color: #000;
+      }
+      &::before {
+        margin-top: 2px;
+        width: 35px;
+        height: 35px;
+        background-image: url(https://cgt-dev-ft.microsysx.com/images/v2/icons/circle-active.svg);
+      }
+    }
+  }
+
+  .ant-steps-item-active-blue {
+    background-color: #d1e8f2;
+    .ant-steps-item-content {
+      margin-left: 5px;
+      &::before {
+        margin-left: 5px;
+        background-image: url(https://cgt-dev-ft.microsysx.com/images/v2/icons/circle-active.svg);
+      }
+    }
+  }
+  .treatmentName {
+    font-size: 0.875rem;
+    padding-top: 10px;
+    min-width: 59px;
+    padding-right: 2px;
+  }
+  .btn-view-timeline {
+    background-color: #3869d1;
+    color: white;
+    border-radius: 22%;
+    margin-left: 10px;
+    display: inline-block;
+    height: 30px;
+    font-size: 0.5rem;
+    // margin-top: 12px;
+    // vertical-align: text-bottom;
+  }
+
+  .ant-steps-horizontal {
+    & .ant-steps-item:last-child {
+      padding-right: 5px;
+      padding-left: 0;
+      // flex: auto;
+    }
+  }
+
+  .ant-steps-horizontal-large {
+    border-radius: 20px;
+    height: 60px;
+    min-width: 30%;
+    margin-left: 2%;
+    // margin-right: 5%;
+    .ant-steps-item-content {
+      margin-left: 15px;
+      // margin-top: 7px;
+      font-weight: 200;
+      font-size: 1.8rem;
+      .ant-steps-item-title {
+        font-size: large;
+        font-weight: 400;
+        margin-left: 4%;
+      }
+      & .ant-steps-item:last-child {
+        padding-right: 25px;
+        padding-left: 25px;
+        padding-top: 3px;
+      }
+
+      &::before {
+        width: 35px;
+        height: 35px;
+        // background-image: url(https://cgt-dev-ft.microsysx.com/images/v2/icons/circle.svg);
+      }
+    }
+  }
+  // .ant-table-thead > tr > th,
+  // .ant-table-tbody > tr > td {
+  //   padding-top: 0;
+  //   border: 1px solid red;
+  // }
+}
+
+.view-screen {
+  .ant-timeline-item-content {
+    margin-left: 30px;
+  }
+  .ant-timeline-item-head-grey {
+    background-color: #efefef;
+    border-radius: 22px;
+    padding: 5px;
+    margin-top: 20px;
+    .anticon {
+      background-color: white;
+      border-radius: 22px;
+      padding: 5px;
+    }
+  }
+  .ant-timeline-item-head-green {
+    background-color: #d1f2dc;
+    border-radius: 22px;
+    padding: 5px;
+    margin-top: 20px;
+    .anticon {
+      background-color: white;
+      border-radius: 22px;
+      padding: 5px;
+      color: #1bb559;
+    }
+  }
+  .green-border {
+    border: 1px solid #1bb559;
+  }
+  .grey-border {
+    border: 1px solid #e3e4e4;
+  }
+  .step-bar {
+    padding: 10px;
+    border-radius: $default-radius;
+    margin-left: 10px;
+    .left {
+      .step-title {
+        display: block;
+        font-size: 1.2rem;
+        color: black;
+        font-weight: 400;
+      }
+      .date-time {
+        font: 16px poppins, sans-serif;
+        color: black;
+      }
+    }
+    .right {
+      text-align: right;
+      display: block;
+      .step-title {
+        color: black;
+      }
+      .organization {
+        color: #3869d1;
+      }
+    }
+  }
+  .ant-tabs-tabpane-active {
+    padding: 5px;
+  }
+  .ant-timeline {
+    .anticon {
+      font-size: 1.5625rem !important;
+    }
+  }
+
+  .ant-tabs-tab-active,
+  .ant-tabs-tab {
+    color: #233151 !important;
+    font-weight: 300 !important;
+  }
+
+  .ant-tabs-content {
+    // margin-left: 3px;
+    padding-left: 15px;
+  }
+}
+
+.pad-bottom {
+  padding-bottom: 20px;
+  .view-screen {
+    .ant-timeline-item-content {
+      margin-left: 30px;
+    }
+    .ant-timeline-item-head-grey {
+      background-color: #efefef;
+      border-radius: 22px;
+      padding: 5px;
+      margin-top: 20px;
+      .anticon {
+        background-color: white;
+        border-radius: 22px;
+        padding: 5px;
+      }
+    }
+    .ant-timeline-item-head-green {
+      background-color: #d1f2dc;
+      border-radius: 22px;
+      padding: 5px;
+      margin-top: 20px;
+      .anticon {
+        background-color: white;
+        border-radius: 22px;
+        padding: 5px;
+        color: #1bb559;
+      }
+    }
+    .step-bar {
+      border: 1px solid #1bb559;
+      padding: 10px;
+      border-radius: $default-radius;
+      margin-left: 10px;
+      .left {
+        .step-title {
+          display: block;
+          font-size: 1.24em;
+          color: black;
+          font-weight: 400;
+        }
+        .date-time {
+          font-size: 1rem;
+          color: #a7a5a5;
+        }
+      }
+      .right {
+        text-align: right;
+        display: block;
+        .step-title {
+          color: black;
+        }
+        .organization {
+          color: #3869d1;
+        }
+      }
+    }
+    .ant-tabs-tabpane-active {
+      padding: 5px;
+    }
+    .ant-timeline {
+      .anticon {
+        font-size: 1.5625rem !important;
+      }
+    }
+
+    .ant-tabs-tab-active,
+    .ant-tabs-tab {
+      color: #233151 !important;
+      font-weight: 300 !important;
+    }
+
+    .ant-tabs-content {
+      margin-left: 3px;
+      padding-left: 15px;
+    }
+  }
+}
+.inbound-accept-tabs {
+  .ant-tabs-nav {
+    .ant-tabs-tab {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      font-size: 1rem;
+      text-align: center;
+      border-radius: 22px;
+      background-color: #d1f2dc;
+    }
+    .ant-tabs-tab-active {
+      &::after {
+        background-image: url(https://cgt-dev-ft.microsysx.com/images/v2/icons/circle.svg);
+      }
+    }
+  }
+}
+//
+// @media(max-width: 101%){
+//   .default-card.pills-tabs.green-on-update {
+//     .ant-tabs-nav-scroll {
+//       .ant-tabs-tab
+//         margin: 0;
+//       }
+//     }
+// }
+
+.h-tab-col{
+  .h-tabs {
+    .ant-tabs-bar {
+      border-bottom: 0;
+    }
+    .ant-tabs-tab-active {
+      color: #1a1a1b;
+      background-color: #b4c8f3 !important;
+      @extend .default-border-radius;
+    }
+  
+    .ant-tabs-tab {
+      border: 1px solid #e5e4e4;
+      @extend .default-border-radius;
+    }
+    .ant-tabs-nav {
+      padding-bottom: 10px;
+    }
+  }
+}

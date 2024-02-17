@@ -1,0 +1,142 @@
+.patient-page {
+  .treatmentName {
+    display: inline-block;
+    padding: 10px 0;
+    // margin-top: 12px;
+  }
+  .ant-table-content {
+    .ant-table-tbody tr {
+      &:hover {
+        // background: #fff;
+        // box-shadow: 0 26px 60px 0 rgb(0 0 0 / 10%);
+        background-image: url(http://sch-dev-atmps.microsysx.com/assets/media/Rectangle%20121.png);
+        background-repeat: no-repeat;
+        background-position: left;
+        margin-right: 0 !important;
+        // color: #2255c2;
+        border-radius: 44px;
+      }
+    }
+  }
+  .ant-table-tbody
+    > tr:hover:not(.ant-table-expanded-row):not(.ant-table-row-selected)
+    > td {
+    background: none;
+  }
+  .btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+      border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    &:not(:disabled):not(.disabled) {
+      cursor: pointer;
+    }
+  }
+
+  .ant-spin-nested-loading {
+    // margin-top: 3rem;
+  }
+
+  .patient-table {
+    td.ant-table-row-cell-break-word:nth-child(2) {
+      font-weight: bold !important;
+    }
+    td.ant-table-row-cell-break-word:nth-child(1) {
+      font-weight: 300 !important;
+    }
+    td.ant-table-row-cell-break-word:nth-child(3) {
+      font-weight: 300 !important;
+    }
+  }
+
+  div::-webkit-scrollbar {
+    background-color: #fff;
+    width: 8px;
+  }
+  div::-webkit-scrollbar-track {
+    background-color: #fff;
+  }
+  div::-webkit-scrollbar-thumb {
+    background-color: #babac0;
+    border-radius: 10px;
+    border: 6px solid #fff;
+  }
+  div::-webkit-scrollbar-button {
+    display: none;
+  }
+
+  .treatment-status-col {
+    .ant-table-header-column {
+      width: 100%;
+    }
+    .treatment-title {
+      display: inline-block;
+      // width: 49%;
+    }
+  }
+
+  // .ant-table-row-cell-break-word {
+  //   .ant
+  //   .ant-btn:active, .ant-btn.active {
+  //     border: #babac0;
+  //     color: #babac0;
+  //   }
+  // }
+  .ant-tabs.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab-active {
+    border: none !important;
+  }
+  .ant-tabs-tab:hover {
+    color: black !important;
+  }
+  .ant-alert-info {
+    background-color: #ececec;
+    border: #ececec;
+  }
+  // ------------------
+  .ant-descriptions-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  .ant-descriptions-item-label.ant-descriptions-item-colon,
+  .ant-descriptions-item-content {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .ant-descriptions-item {
+    width: 50% !important;
+    margin-right: 10px;
+    font-weight: 600;
+  }
+  .line {
+    background-color: #e2e2e2;
+    border: 1px solid #ececec;
+  }
+
+  .external-entity {
+    .ant-descriptions-item-content {
+      display: block;
+      padding: 15px 25px;
+      background-color: #e9ecef;
+      font-size: 1rem;
+      margin-top: 15px;
+      border-radius: 35px;
+      margin-right: 20px;
+      font-weight: 400;
+    }
+  }
+}
+// .patient-page {
+
+// }

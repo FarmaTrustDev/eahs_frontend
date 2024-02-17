@@ -1,0 +1,22 @@
+.logistic-pick-detail {
+    .card-head {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .header-body {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .common-detail {
+        dt {
+            width: 48%;
+        }
+    }
+}
+.logistic-shipping-detail {
+    .ship-cards-body > .ant-card-body{
+        display: flex;
+    }
+}

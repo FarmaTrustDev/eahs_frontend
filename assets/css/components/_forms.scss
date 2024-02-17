@@ -1,0 +1,88 @@
+.advance-receipt {
+  background-color: #f5f5f5;
+  padding: 25px;
+  color: #000 !important;
+  .d-flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .title {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .status-main {
+    margin: 20px 0;
+    h2 {
+      font-size: 18px;
+      font-weight: 600;
+      margin: 0;
+      margin-right: 10px;
+    }
+  }
+  span.status {
+    padding: 5px 10px;
+    background-color: #d1f2dd;
+    border-radius: 20px;
+    color: grey;
+  }
+  span.status.completed {
+    padding: 5px 10px;
+    background-color: #d1f2dd;
+    border-radius: 20px;
+    color: grey;
+  }
+}
+.bount_status {
+  .ant-calendar-picker-input.ant-input.ant-input-lg {
+    padding-bottom: 5px;
+  }
+}
+.ant-tooltip-inner {
+  min-width: 30px;
+  min-height: 32px;
+  padding: 6px 8px;
+  color: #fff;
+  text-align: left;
+  text-decoration: none;
+  word-wrap: break-word;
+  background-color: rgba(0, 0, 0, 0.75);
+  border-radius: 4px;
+  white-space: pre-line;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 15%);
+}
+.add-bag-modal {
+  .ant-form-item-control {
+    input {
+      height: 47px !important;
+      padding-bottom: 6px;
+    }
+    textarea {
+      height: 77px;
+      margin-bottom: 15px;
+    }
+  }
+}
+.add-bag-modal + .ant-row.ant-form-item {
+  margin-bottom: 0;
+  // .ant-calendar-picker-input.ant-input {
+  //   padding-bottom: 6px !important;
+  // }
+  .text-right.ant-row.ant-form-item {
+    margin-bottom: 0 !important;
+  }
+}
+.support-add-modal {
+  .ant-form-item-label {
+    line-height: 24px;
+    text-align: left;
+  }
+  .ant-row {
+    .ant-form-item {
+      margin-bottom: 13px;
+    }
+  }
+  #patientEnrollment_description,#patientEnrollment_subject, .ant-select-selection-selected-value {
+    color: #000;
+  }
+}

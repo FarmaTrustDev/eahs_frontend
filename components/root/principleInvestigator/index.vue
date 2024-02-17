@@ -1,0 +1,58 @@
+<template>
+    <div class="donor-home">
+      <h1 class="title mt-15">
+      <strong>Principle Investigator Dashboard</strong>
+    </h1>
+      <a-card class="grey-card" :bordered="false">
+        <a-row>
+          <a-col :md="10"> 
+            <!-- <div class="home-tab">
+              <a
+                href="javascript:;"
+                @click="handleSidebarKey(`/consent`, 12)"
+              >
+                <h4 class="heading-home">
+                  <strong class="strong">Consent</strong>
+                </h4>
+              </a>
+            </div> -->
+            
+            <div class="home-tab">
+              <a
+                href="javascript:;"
+                @click="handleSidebarKey(`/projects`, 16)"
+              >
+                <h4 class="heading-home">
+                  <strong class="strong">Project</strong>
+                </h4>
+              </a>
+            </div>
+          </a-col>
+  
+          <a-col :md="10">
+            
+  
+            <div class="home-tab">
+              <a
+                href="javascript:;"
+                @click="handleSidebarKey(`/donor/detail`, 17)"
+              >
+                <h4 class="heading-home">
+                  <strong class="strong"> Donor/Patient </strong>
+                </h4>
+              </a>
+            </div>
+          </a-col>
+          <a-col :md="10">
+            
+          </a-col>
+        </a-row>
+      </a-card>
+    </div>
+  </template>
+  <script>
+  import routeHelpers from '~/mixins/route-helpers'
+  export default({
+    mixins:[routeHelpers]
+  })
+  </script>

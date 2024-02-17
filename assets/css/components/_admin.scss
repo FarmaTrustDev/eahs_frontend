@@ -1,0 +1,79 @@
+.admin-page,
+.logistics-page {
+  .logistic-container {
+    padding: 2rem;
+  }
+  .ant-select {
+    width: 100%;
+  }
+  .ant-select-selection--multiple {
+    background-color: #f9f9f9;
+  }
+  .ant-select-selection--multiple .ant-select-selection__rendered {
+    height: 80px;
+  }
+  .ant-select-selection__choice {
+    background-color: #d1f2dc;
+    border: 0;
+    border-radius: 22px;
+    color: #233151;
+    list-style: none;
+    cursor: default;
+    float: left;
+    margin-right: 5px;
+    margin-top: 5px;
+    padding: 15px;
+    font-size: 1.125rem;
+  }
+  .ant-select-selection__rendered > ul > li {
+    height: 100%;
+    padding: 15px 30px;
+    margin-top: 25px;
+  }
+  .ant-select-selection__choice__remove > i {
+    font-size: 1.063rem;
+    margin-top: 5px;
+  }
+  .ant-checkbox-wrapper h3 {
+    display: inline-block;
+  }
+}
+.admin-screening-page {
+  .ant-tabs-bar {
+    border-bottom: none !important;
+  }
+  .ant-spin-container {
+    background: #fff;
+    padding: 31px;
+    border-radius: 25px;
+  }
+  .ant-tabs-nav {
+    margin-bottom: 2px;
+    .ant-tabs-tab {
+      border: 1px solid #ececec !important;
+      border-radius: 30px;
+      font-size: 15px;
+      padding: 1rem;
+    }
+    .ant-tabs-tab:hover {
+      color: gray !important;
+    }
+    .ant-tabs-tab-active {
+      color: #3869d1 !important;
+      text-shadow: none;
+      background-color: #f2f5fb;
+      font-weight: 400;
+    }
+    .ant-tabs-ink-bar.ant-tabs-ink-bar-animated {
+      display: none !important;
+    }
+  }
+  .ant-list-item {
+    border: 2px solid #909090 !important;
+    border-radius: 22px !important;
+    padding: 1rem !important;
+  }
+}
+.patient-page.container > .ant-card-body {
+  padding-top: 0;
+}

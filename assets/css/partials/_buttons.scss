@@ -1,0 +1,57 @@
+.ant-btn {
+  height: 48px;
+  border-radius: 19px;
+}
+.consent-button{
+.ant-btn {
+  width: 130px;
+  height: 35px;
+  border-radius: 25px;
+  margin-top: 10px;
+}
+}
+.screening-btn {
+  .ant-btn {
+    width: 100%;
+  }
+}
+
+.ant-btn-primary {
+  background-color: #3869d1;
+  border-color: #3869d1;
+  &:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+  }
+  &:focus {
+    background-color: #1749b5;
+    border-color: #1749b5;
+  }
+}
+.action-button {
+  background: #f1f1f1;
+  border: 1px solid transparent;
+  height: 40px;
+}
+.ant-btn-drop-down {
+  margin-top: 15px;
+  height: 25px;
+  width: 70px;
+  border-radius: 9px;
+  padding-left: 10px;
+}
+.btn-color {
+  color: black;
+}
+.ant-pagination-options-size-changer.ant-select {
+  .ant-select-selection.ant-select-selection--single {
+    margin-bottom: 0;
+  }
+}
+.cursor-pointer{
+  cursor: pointer;
+}
+
+.study-button {
+    height: 35px;
+}

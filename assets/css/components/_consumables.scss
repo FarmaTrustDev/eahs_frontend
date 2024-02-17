@@ -1,0 +1,119 @@
+.consumables-tile {
+  margin-bottom: 3em;
+  margin-top: 10px;
+  text-align: center;
+  padding: 15px;
+  border-radius: 20px;
+  background-color: white;
+  min-height: 80%;
+  //@extend .light-shadow;
+  box-shadow: 0 26px 120px rgb(0 0 0 / 4%); // custom shadow because raja need dito design
+  .svg-container {
+    max-width: 117px;
+    margin: auto;
+  }
+  .progressive-svg {
+    z-index: 2;
+  }
+  .static-svg {
+    position: absolute;
+    left: 0;
+    z-index: 1;
+  }
+  .top-digit {
+    position: absolute;
+    top: 70px;
+    margin: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  .slider-beast {
+    margin: 0 auto;
+    position: relative;
+    max-width: 161px;
+    overflow: hidden;
+    :hover {
+      cursor: move; /* fallback if grab cursor is unsupported */
+      cursor: grab;
+      cursor: -moz-grab;
+      cursor: -webkit-grab;
+    }
+  }
+  .consumables-heading {
+    font-size: 1rem;
+    margin-top: -8px;
+    // width: 75%;
+    // text-align: center;
+    // margin-left: 40px;
+  }
+  .slider-svg {
+    width: 100%;
+    background-color: #1e2b4b;
+    border-radius: 22px;
+  }
+  .img-dragger-dots {
+    display: inline-block;
+    width: 100%;
+    margin-left: -200px;
+    min-width: 400px;
+    height: 16px;
+  }
+  .drag-image {
+    position: absolute;
+    color: #2359e8;
+    left: 0;
+    z-index: 2;
+    font-weight: bold;
+    font-size: 	2rem;
+    right: 0;
+  }
+}
+
+.client-hub-tile {
+  margin-top: 15px;
+  background-color: white;
+  text-align: center;
+  padding: 15px;
+  @extend .default-border-radius;
+  @extend .border;
+  .icons {
+    span {
+      padding: 15px;
+    }
+  }
+  figure {
+    img {
+      @extend .default-border-radius;
+    }
+  }
+  .list {
+    ul {
+      li {
+        list-style: none;
+        padding: 15px;
+        margin: 15px auto;
+        @extend .default-border-radius;
+        @extend .border;
+        .date {
+          float: left;
+        }
+        .title {
+          float: right;
+        }
+      }
+    }
+  }
+}
+
+.blink_me {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0.3;
+  }
+}
