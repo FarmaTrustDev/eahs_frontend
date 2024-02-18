@@ -2,6 +2,7 @@
   <a-card :loading="loading" :bordered="null" class="plain-header-border">
     <span slot="title" class="page-title">{{ title }} <font style="color:#0d0; font-weight: lighter;">{{ subTitle }}</font></span>
     <span slot="extra">
+      <slot name="headerMenus" />
       <a-button v-if="create" type="primary" @click="gotoState('create')"
         >Create</a-button
       >

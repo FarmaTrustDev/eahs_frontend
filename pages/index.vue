@@ -50,25 +50,6 @@ export default {
     gotoView(uri) {
       this.goto(`/${uri}`)
     },
-    login() {
-      AuthServices.login({ email: '', username:'eahs', password:'test123' })
-        .then((response) => {
-          setRefreshToken(response.refreshToken)
-          setAccessToken(response.accessToken)
-          this.$store.commit('setToken', {
-            token: response.accessToken,
-            status: true,
-          })
-          success(this, { message: response.message })
-        })
-        .catch((e) => {
-          if (!isEmpty(e.response)) {
-            this.error = 'Invalid Username/Password'
-            this.showError = true
-          }
-        })
-        .finally(() => (this.loading = false))
-    },
   },
 }
 </script>

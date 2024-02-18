@@ -1,22 +1,27 @@
 <template>
     <div>
         <a-row>
-            <a-col :span="12">
+            <a-col :span="8">
                 <img src='~/assets/logo/ad_logo.png' style="height: 220px; width: 65%; margin-left: 25px; border: none;"/>
             </a-col>
-            <a-col :span="12">
+            <a-col :span="8">
+                <img src='~/assets/logo/cat.png' style="height: 220px; width: 65%; margin-left: 25px; border: none;"/>
+            </a-col>
+            <a-col :span="8">
                 <img src='~/assets/logo/hs_logo.png' style="height: 220px; width: 65%;"/>
             </a-col>
         </a-row>
         <a-row style="margin-top:50px">
             <a-col :span="12">
                 <div id="chart"></div>
-                <a-button :disabled="spinning" type="primary" style="width: 350px; margin-top: 520px; margin-left: 50px;" @click="resetWheel()">Reset</a-button>
+                <a-button :disabled="spinning" type="primary" style="width: 500px; margin-top: 620px; margin-left: 25px;" @click="resetWheel()">Reset</a-button>
             </a-col>
             <a-col :span="12">
-                <div v-for="(se,index) in selectedSection" :key="index">
-                    <strong><h2>{{ se.question }}</h2></strong>
-                </div>
+                <a-row v-for="(se,index) in selectedSection" :key="index" style="margin-top: 5px;">
+                    <a-col :span="2">{{ index+1 }}</a-col>
+                    <a-col :span="2"><img :src="`${se.countryFlag}`" width="20" height="20"></a-col>
+                    <a-col :span="16">{{ se.judgeName }}</a-col>
+                </a-row>
             </a-col>
         </a-row>
         <a-row style="margin-top: 550px;">
@@ -33,15 +38,18 @@
   
   <script>
   import * as d3 from 'd3';
-  
+  import JudgeServices from '~/services/API/JudgeServices'
+  import RuleServices from '~/services/API/RuleServices'
   export default {
     data() {
         return {
             freeze: false,
             rolling: false,
             wheelDeg: 0,
+            rulesData:[],
             prizeNumber: 8,
             oldpick:[],
+            judgesData:[],
             prizeListOrigin: [
                 {
                 icon: "https://picsum.photos/40?random=1",
@@ -81,13 +89,17 @@
     },
     mounted() {
         const self = this;
+        self.fetch()
         let transitionStarted = false;
         let rotation = 0
         const padding = {top:20, right:40, bottom:0, left:0}
-        const w = 500 - padding.left - padding.right
-        const h = 500 - padding.top  - padding.bottom
+        const w = 600 - padding.left - padding.right
+        const h = 600 - padding.top  - padding.bottom
         const r = Math.min(w, h)/2
-        console.log(r)
+        let perCount=false
+        let member=false
+        let conf=false
+        // console.log(r)
         // var oldrotation
         let picked = 100000
         // self.oldpick = []
@@ -97,9 +109,13 @@
         .range([
             "#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd",
             "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf",
+            "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf",
+            "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf",
+            "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf",
+            "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf",
             // Add more colors as needed
         ]);
-      const data = [
+      /* let data = [
         {"label":"Dell LAPTOP",  "value":1,  "question":"What CSS property is used for specifying the area between the content and its border?"}, // padding
         {"label":"IMAC PRO",  "value":2,  "question":"What CSS property is used for changing the font?"}, // font-family
         {"label":"SUZUKI",  "value":3,  "question":"What CSS property is used for changing the color of text?"}, // color
@@ -110,8 +126,34 @@
         {"label":"LAND",  "value":8,  "question":"Which side of the box is the third number in: margin:1px 1px 1px 1px; ?"}, // bottom
         {"label":"MOTOROLLA",  "value":9,  "question":"What are the fonts that don't have serifs at the ends of letters called?"}, // sans-serif
         {"label":"BMW", "value":10, "question":"With CSS selectors, what character prefix should one use to specify a class?"}
-      ];
-  
+      ]; */
+      // const data=self.judgesData
+      // console.log(data)
+      (async function(){
+        await self.fetchRules();
+        const rul=self.rulesData.data
+        console.log(rul)
+        if(rul[0].isIncluded===true){
+            perCount=true
+        }
+        if(rul[1].isIncluded===true){
+            conf=true
+        }
+        if(rul[2].isIncluded===true){
+            member=true
+        }
+        // console.log(rul)
+      
+      let data;
+      (async function() {
+        try {
+            await self.fetch();
+            data = self.judgesData.data; // Assign value to the data variable
+            // console.log(data);
+            // Now you can use the 'data' variable here
+            // Place the code that depends on 'data' here
+
+            console.log(data)
       const svg = d3.select('#chart')
         .append("svg")
         .data([data])
@@ -127,17 +169,26 @@
         .sort(null) // Disable sorting
         .value(() => 1); // Value accessor function
       // const arc = d3.svg.arc().outerRadius(r);
+      // console.log(pie)
+      // const arc = d3.arc().outerRadius(r);
+      // const arc = d3.svg.arc().outerRadius(r);
+      // console.log('Radius: '+r)
       const arc = d3.arc().outerRadius(r);
+      // console.log('Arc')
+      // const arcPath = arc(data[0]);
+      // console.log(arcPath)
       const arcs = vis.selectAll("g.slice")
         .data(pie)
         .enter()
         .append("g")
         .attr("class", "slice");
-  
+        
         arcs.append("path")
-    .attr("fill", (d, i) => color(i))
-    .attr("d", arc); // Use the arc function to generate path
-  
+        .attr("fill", (d, i) => color(i))
+        .attr("d", function(d) {
+            return arc(d); // Generate the arc path using the arc generator function
+        });
+        // console.log(arcs)
       arcs.append("text").attr("transform", function(d){
           d.innerRadius = 0;
           d.outerRadius = r;
@@ -146,7 +197,7 @@
         })
         .attr("text-anchor", "end")
         .text( function(d, i) {
-          return data[i].label;
+          return data[i].judgeName;
         });
   
       container.on("click", spin);
@@ -175,7 +226,11 @@
         }
         rotation += 90 - Math.round(ps/2);
         if (!transitionStarted) {
-            self.generateList(data[picked])
+            setTimeout(() => {
+                self.generateList(data[picked], perCount, member, conf);
+            }, 3000);
+
+            // self.generateList(data[picked], perCount, member, conf)
             vis.transition()
             .duration(3000)
             .attrTween("transform", function() {
@@ -195,7 +250,7 @@
         }
         container.on("click", spin);
       }
-      console.log(r)
+      // console.log(r)
       svg.append("g")
         .attr("transform", "translate(" + (w + padding.left + padding.right) + "," + ((h/2)+padding.top) + ")")
         .append("path")
@@ -216,9 +271,20 @@
         .style("font-weight", "bold")
         .style("font-size", "30px")
         .style("fill", "white");
-    
 
-        
+
+
+
+
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+        // Now you can use the 'data' variable here
+      })();
+      
+    })();
+
+
     },
     methods: {
         resetWheel()
@@ -226,9 +292,70 @@
             this.selectedSection = []
             this.oldpick= []
         },
-        generateList(data){
-            this.selectedSection.push(data)
-        }
+        generateList(data, pC, me, conf){
+            if(conf===false){
+                if(me===false){
+                    if(pC===false){
+                        this.selectedSection.push(data)
+                    }else{
+                        const record = this.selectedSection.find(entry => entry.countryName === data.countryName);
+                        if(!record){
+                            this.selectedSection.push(data)
+                        }
+                    }
+                }else{
+                    console.log('Entring to check member & per country rule')
+                    if(!data.isMember){
+                        if(!pC){
+                            this.selectedSection.push(data)
+                        }else{
+                            const record = this.selectedSection.find(entry => entry.countryName === data.countryName);
+                            if(!record){
+                                this.selectedSection.push(data)
+                            }
+                        }
+                    }
+                }
+                
+            }else{
+                console.log('Entring to check per conflict rule')
+                if(!data.isConflict){
+                    if(!me){
+                        if(!pC){
+                            this.selectedSection.push(data)
+                        }else{
+                            const record = this.selectedSection.find(entry => entry.countryName === data.countryName);
+                            if(!record){
+                                this.selectedSection.push(data)
+                            }
+                        }
+                    }else{
+                        console.log('Entring to check member rule')
+                        if(!data.isMember){
+                            this.selectedSection.push(data)
+                        }
+                    }
+                }
+            }
+        },
+        /* fetch(){
+            JudgeServices.get().then((response)=>{
+                this.judgesData=response
+                // console.log(this.judgesData.data)
+            })
+        } */
+        fetch() {
+            return JudgeServices.get().then((response) => {
+                this.judgesData = response;
+                // console.log(this.judgesData.data)
+            });
+        },
+        fetchRules() {
+            return RuleServices.get().then((response) => {
+                this.rulesData = response;
+                // console.log(this.judgesData.data)
+            });
+        },
     },
     
   }
@@ -250,8 +377,8 @@
   
   #chart{
     position:absolute;
-    width:500px;
-    height:500px;
+    width:600px;
+    height:600px;
     top:0;
     left:0;
   }

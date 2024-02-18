@@ -3,7 +3,7 @@
     :create="false"
     :loading="loading"
     :bordered="false"
-    title="Judge List"
+    title="Judges List"
     class="specific container page-search-input-container"
   >
     <template slot="headerMenus">
