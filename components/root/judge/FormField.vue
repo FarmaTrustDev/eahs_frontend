@@ -9,9 +9,9 @@
         >
           <a-input
             v-decorator="[
-              'name',
+              'judgeName',
               {
-                initialValue: entity.JudgeName ,
+                initialValue: entity.judgeName ,
                 rules: [
                   {
                     required: true,
@@ -26,34 +26,33 @@
               
       <a-col :span="12">
         <a-form-item
-          :label="translation.Count_1_657+':*'"
+          label="Country Name"
           :label-col="{ span: 24 }"
           :wrapper-col="{ span: 21 }"
         >
           <a-select
             v-decorator="[
-              'countryId',
+              'countryName',
               {
-                initialValue: entity.countryId,
+                initialValue: entity.countryName,
                 rules: [
                   {
                     required: true,
-                    message: translation.Count_1_657,
+                    message: 'required',
                   },
                 ],
               },
             ]"
             :get-popup-container="trigger => trigger.parentNode"
             :show-search="true"
-            :filter-option="filterOption"
-            :placeholder="translation.Count_1_657"
+            placeholder="Select Country"
             style="width: 100%"
             size="large"
             class="default-select"
             @search="searchCountries"
           >
-            <a-select-option v-for="country in countries" :key="country.id">
-              {{ country.name }}
+            <a-select-option v-for="country in countries" :key="country.name">
+               <a-avatar :src="country.flagPath" :size="40" /> {{ country.name }}
             </a-select-option>
           </a-select>
         </a-form-item>
@@ -103,7 +102,7 @@
 
       <a-col :span="12" >
         <a-form-item 
-          label="Is Eahs Rule"
+          label="Is Eahs Member"
           :label-col="{ span: 6 }"
           :wrapper-col="{ span: 16 }"
           class="pt-3">
@@ -143,19 +142,7 @@
           </a-radio-group>
           </a-form-item> -->
       </a-col>
-        <a-col :span="4" >
-            <h3 style="margin-top: 5px;">Upload Flag Image</h3>
-        </a-col>
-        <a-col :span="20">
-            <!-- <a-button type="primary" class="hgtBtn"  @click="showModal(true)">Upload Document</a-button> -->
-            <Upload
-            :default-file-list="entity.countryFlag"
-            :extensions="allowedExtensions"
-            @handleChange="handleChange"
-          />
-            <!-- <a-button  class="hgtBtn" style="background-color: #3869d1;color:white"> <a-icon type="upload"  /> Upload Document </a-button> -->
-            
-        </a-col>
+        
 
         
       <a-col :span="24">      
@@ -166,7 +153,7 @@
         <FormActionButton
           :is-created="isCreated"
           :loading="loading"
-          :custom-text="translation['Save&_3_453']"
+          custom-text="Save"
         />
       </a-form-item>
       </a-col>      
@@ -179,10 +166,11 @@ import { _disabledFutureDate } from '~/services/Helpers/MomentHelpers'
 import { filterOption, isEmpty } from '~/services/Helpers'
 import CountryServices from '~/services/API/CountryServices'
 import { PICTURE_UPLOAD_EXTENSIONS } from '~/services/Constant'
-import Upload from '~/components/upload/userUpload'
+import imagesHelper from '~/mixins/images-helper'
 
 export default {
-  components: { Upload },
+  components: { },
+  mixins: [ imagesHelper],
   props: {
     isCreated: {
       type: Boolean,
@@ -221,9 +209,7 @@ export default {
     }
   },
   computed:{
-    translation() {
-      return this.$store.getters.getTranslation
-    },
+   
   },
   methods: {
     filterOption,
@@ -244,6 +230,11 @@ export default {
         this.fetchCountries()
       }
     },
+    removeQuotes(img){
+        if(!isEmpty(img)){
+          return img.replace(/"/g, '')
+        }
+      },
     handleChange(info){
       // console.log(info)
       this.fileList = info

@@ -2,7 +2,7 @@
   <div>
     <a-layout-header>
       <div class="user-detail">
-        {{ translation['Welco_1_1'] }}, {{ user.name }}
+        
       </div>
 
       <div class="hospital-detail">

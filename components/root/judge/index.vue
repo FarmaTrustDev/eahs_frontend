@@ -58,9 +58,7 @@ export default {
     this.checkCreated()
   },
   computed:{
-    translation() {
-      return this.$store.getters.getTranslation
-    },
+    
   },  
   methods: {
     handleChangeImage(file)
@@ -82,6 +80,12 @@ export default {
         .getById(id)
         .then((response) => {
           this.entity = response.data
+          this.form.setFieldsValue({
+          judgeName: response.data.judgeName,
+          countryName: response.data.countryName,
+          isConflict:response.data.isConflict,
+          isMember:response.data.isMember
+        });
           if (this.isFunction(this.getEntity)) {
             this.getEntity(response)
           }
@@ -163,6 +167,12 @@ export default {
       this.form.validateFields((err, values) => {
         if (!err) {      
           values.status = this.pending
+          if(values.isConflict === undefined){
+            values.isConflict = false
+          }
+          if(values.isMember === undefined){
+            values.isMember = false
+          }
           this.labData = values
           this.upsert(this.labData)
         } else {
