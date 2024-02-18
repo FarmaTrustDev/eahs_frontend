@@ -1,6 +1,5 @@
 <template>
   <a-layout id="components-layout-demo-responsive">
-    <sidebar />
     <a-layout class="main-section">
       <Header></Header>
 
@@ -21,12 +20,10 @@
 </template>
 
 <script>
-import sidebar from '~/components/layout/Sidebar'
 import Header from '~/components/layout/Header'
 
 export default {
   components: {
-    sidebar,
     Header,
   },
   computed: {

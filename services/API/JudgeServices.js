@@ -5,7 +5,7 @@ const baseApi = `${BASE_API}/judges`
 
 function get() {
   return request({
-    url: `${baseApi}`,
+    url: `${baseApi}/getJudges`,
     method: 'GET'
   })
 }
