@@ -1,9 +1,6 @@
 <template>
   <a-layout id="components-layout-demo-responsive">
-    <sidebar />
     <a-layout class="main-section">
-      <Header></Header>
-
       <a-layout-content style="margin: 0 16px ;">
         <!-- <a-breadcrumb style="margin: 16px 0">
           <a-breadcrumb-item>User</a-breadcrumb-item>
@@ -21,13 +18,9 @@
 </template>
 
 <script>
-import sidebar from '~/components/layout/Sidebar'
-import Header from '~/components/layout/Header'
 
 export default {
   components: {
-    sidebar,
-    Header,
   },
   computed: {
     // ...mapGetters(['getUser']),

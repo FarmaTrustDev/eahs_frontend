@@ -2,11 +2,10 @@
   <a-card :loading="loading" :bordered="null" class="plain-header-border">
     <span slot="title" class="page-title">{{ title }} <font style="color:#0d0; font-weight: lighter;">{{ subTitle }}</font></span>
     <span slot="extra">
-      <slot name="headerMenus" />
       <a-button v-if="create" type="primary" @click="gotoState('create')"
-        >{{translation.Creat_1_123}}</a-button
+        >Create</a-button
       >
-      <a-button v-if="back" type="primary" class="mr-10 btn-back" @click="goBack()">{{translation.Back_1_538}}</a-button>
+      <a-button v-if="back" type="primary" class="mr-10 btn-back" @click="goBack()">Back</a-button>
     </span>
 
     <slot name="content" />

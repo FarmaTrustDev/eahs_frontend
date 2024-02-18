@@ -7,7 +7,7 @@
     class="specific container page-search-input-container"
   >
     <template slot="headerMenus">
-      <a-button type="primary" @click="goto('judge/create')">Add Judge</a-button>
+      <a-button type="primary" class="" @click="goto('judge/create')">Add Judge</a-button>
     </template>
     <div slot="content">
       <a-table
