@@ -2,13 +2,13 @@
     <div>
         <a-row>
             <a-col :span="8">
-                <img src='~/assets/logo/ad_logo.png' style="height: 220px; width: 65%; margin-left: 25px; border: none;"/>
+                <img src='~/assets/logo/ad_logo.png' style="height: 220px; width: 70%; margin-left: 25px; border: none;"/>
             </a-col>
-            <a-col :span="8">
-                <img src='~/assets/logo/hs_logo.png' style="height: 220px; width: 65%;"/>
+            <a-col :span="6">
+                <img src='~/assets/logo/hs_logo.png' style="height: 220px; width: 75%;"/>
             </a-col>
-            <a-col :span="8">
-                <img src='~/assets/logo/cat.png' style="height: 220px; width: 65%; margin-left: 25px; border: none;"/>
+            <a-col :span="10">
+                <img src='~/assets/logo/cat.png' style="height: 220px; width: 75%; border: none;"/>
                 
             </a-col>
         </a-row>
@@ -23,14 +23,6 @@
                     <a-col :span="2"><img :src="`${se.countryFlag}`" width="25" height="25"></a-col>
                     <a-col :span="16" style="font-size: 18px;">{{ se.judgeName }}</a-col>
                 </a-row>
-            </a-col>
-        </a-row>
-        <a-row style="margin-top: 550px;">
-            <a-col :span="12">
-                
-            </a-col>
-            <a-col :span="12">
-                
             </a-col>
         </a-row>
       <div id="question"><h1></h1></div>
