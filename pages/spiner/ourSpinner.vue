@@ -5,22 +5,23 @@
                 <img src='~/assets/logo/ad_logo.png' style="height: 220px; width: 65%; margin-left: 25px; border: none;"/>
             </a-col>
             <a-col :span="8">
-                <img src='~/assets/logo/cat.png' style="height: 220px; width: 65%; margin-left: 25px; border: none;"/>
+                <img src='~/assets/logo/hs_logo.png' style="height: 220px; width: 65%;"/>
             </a-col>
             <a-col :span="8">
-                <img src='~/assets/logo/hs_logo.png' style="height: 220px; width: 65%;"/>
+                <img src='~/assets/logo/cat.png' style="height: 220px; width: 65%; margin-left: 25px; border: none;"/>
+                
             </a-col>
         </a-row>
         <a-row style="margin-top:50px">
-            <a-col :span="12">
+            <a-col :span="14">
                 <div id="chart"></div>
                 <a-button :disabled="spinning" type="primary" style="width: 500px; margin-top: 620px; margin-left: 25px;" @click="resetWheel()">Reset</a-button>
             </a-col>
-            <a-col :span="12">
-                <a-row v-for="(se,index) in selectedSection" :key="index" style="margin-top: 5px;">
-                    <a-col :span="2">{{ index+1 }}</a-col>
-                    <a-col :span="2"><img :src="`${se.countryFlag}`" width="20" height="20"></a-col>
-                    <a-col :span="16">{{ se.judgeName }}</a-col>
+            <a-col :span="10" style="padding-top: 20px;">
+                <a-row v-for="(se,index) in selectedSection" :key="index" style="margin-top: 20px;">
+                    <a-col :span="2" style="font-size: 18px;">{{ index+1 }}</a-col>
+                    <a-col :span="2"><img :src="`${se.countryFlag}`" width="25" height="25"></a-col>
+                    <a-col :span="16" style="font-size: 18px;">{{ se.judgeName }}</a-col>
                 </a-row>
             </a-col>
         </a-row>
@@ -108,11 +109,11 @@
         const color = d3.scaleOrdinal()
         .range([
             "#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd",
-            "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf",
-            "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf",
-            "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf",
-            "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf",
-            "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf",
+            "#8c564b", "#ff7f0e", "#2ca02c", "#d62728", "#17becf",
+            "#8c564b", "#ff7f0e", "#2ca02c", "#d62728", "#17becf",
+            "#8c564b", "#e377c2", "#2ca02c", "#d62728", "#17becf",
+            "#8c564b", "#e377c2", "#2ca02c", "#d62728", "#17becf",
+            "#8c564b", "#e377c2", "#2ca02c", "#d62728", "#17becf",
             // Add more colors as needed
         ]);
       /* let data = [
@@ -173,7 +174,8 @@
       // const arc = d3.arc().outerRadius(r);
       // const arc = d3.svg.arc().outerRadius(r);
       // console.log('Radius: '+r)
-      const arc = d3.arc().outerRadius(r);
+      // const arc = d3.arc().outerRadius(r);
+      // const arc = d3.arc().innerRadius(0).outerRadius(r);
       // console.log('Arc')
       // const arcPath = arc(data[0]);
       // console.log(arcPath)
@@ -182,14 +184,18 @@
         .enter()
         .append("g")
         .attr("class", "slice");
-        
         arcs.append("path")
         .attr("fill", (d, i) => color(i))
         .attr("d", function(d) {
+            return generateArcPath(d); // Assuming generateArcPath is a function that creates the arc path string
+        });   
+        /* arcs.append("path")
+        .attr("fill", (d, i) => color(i))
+        .attr("d", function(d) {
             return arc(d); // Generate the arc path using the arc generator function
-        });
+        }); */
         // console.log(arcs)
-      arcs.append("text").attr("transform", function(d){
+        arcs.append("text").attr("transform", function(d){
           d.innerRadius = 0;
           d.outerRadius = r;
           d.angle = (d.startAngle + d.endAngle)/2;
@@ -201,7 +207,16 @@
         });
   
       container.on("click", spin);
-  
+      function generateArcPath(d) {
+        // Assuming d has properties like startAngle, endAngle, innerRadius, outerRadius
+        const arcGenerator = d3.arc()
+            .innerRadius(0)
+            .outerRadius(r)
+            .startAngle(d.startAngle)
+            .endAngle(d.endAngle);
+
+        return arcGenerator();
+      }
       function spin(d){
         if(self.oldpick.length === data.length){
             self.oldpick=[]
