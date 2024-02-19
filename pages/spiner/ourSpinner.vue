@@ -296,7 +296,11 @@
             if(conf===false){
                 if(me===false){
                     if(pC===false){
-                        this.selectedSection.push(data)
+                        const record = this.selectedSection.find(entry => entry.id === data.id);
+                        if(!record){
+                            this.selectedSection.push(data)
+                        }
+                        // this.selectedSection.push(data)
                     }else{
                         const record = this.selectedSection.find(entry => entry.countryName === data.countryName);
                         if(!record){
@@ -307,12 +311,29 @@
                     console.log('Entring to check member & per country rule')
                     if(!data.isMember){
                         if(!pC){
-                            this.selectedSection.push(data)
+                            const record = this.selectedSection.find(entry => entry.id === data.id);
+                            if(!record){
+                                this.selectedSection.push(data)
+                            }
+                            // this.selectedSection.push(data)
                         }else{
                             const record = this.selectedSection.find(entry => entry.countryName === data.countryName);
                             if(!record){
                                 this.selectedSection.push(data)
                             }
+                        }
+                    }else{
+                        const record = this.selectedSection.find(entry => entry.isMember===true);
+                        if(!record){
+                            if(!pC){
+                                this.selectedSection.push(data)
+                            }else{
+                                const records = this.selectedSection.find(entry => entry.countryName === data.countryName);
+                                if(!records){
+                                    this.selectedSection.push(data)
+                                }
+                            }
+                            
                         }
                     }
                 }
@@ -322,7 +343,11 @@
                 if(!data.isConflict){
                     if(!me){
                         if(!pC){
-                            this.selectedSection.push(data)
+                            // this.selectedSection.push(data)
+                            const record = this.selectedSection.find(entry => entry.id === data.id);
+                            if(!record){
+                                this.selectedSection.push(data)
+                            }
                         }else{
                             const record = this.selectedSection.find(entry => entry.countryName === data.countryName);
                             if(!record){
@@ -332,7 +357,11 @@
                     }else{
                         console.log('Entring to check member rule')
                         if(!data.isMember){
-                            this.selectedSection.push(data)
+                            const record = this.selectedSection.find(entry => entry.id === data.id);
+                            if(!record){
+                                this.selectedSection.push(data)
+                            }
+                            // this.selectedSection.push(data)
                         }
                     }
                 }
