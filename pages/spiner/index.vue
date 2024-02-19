@@ -6,7 +6,7 @@
   </template>
   
   <script>
-  import SpinWheel from '~/components/spin';
+  import SpinWheel from '~/pages/spiner/ourSpinner';
   
   export default {
     components: {

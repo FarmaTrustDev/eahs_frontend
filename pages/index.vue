@@ -3,6 +3,7 @@
     <!-- <h1 class="title mt-15">
       <strong>{{ translation['Mydashb_2_7'] }}</strong>
     </h1> -->
+    <SpinWheel></SpinWheel>
   </div>
 </template>
 
@@ -13,8 +14,10 @@ import { setAccessToken, setRefreshToken} from '~/services/Auth'
 // import { setAccessToken, setRefreshToken } from '~/services/Auth'
 import { isEmpty } from '~/services/Helpers'
 import routeHelpers from '~/mixins/route-helpers'
+import SpinWheel from '~/pages/spiner/ourSpinner';
 export default {
   components: {
+    SpinWheel
   },
   mixins: [routeHelpers],
   // middleware: 'auth',
