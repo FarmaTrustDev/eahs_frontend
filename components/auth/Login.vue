@@ -1,8 +1,8 @@
 <template>
   <div class="half-secondary" >
     <div class="login">
-      <a-card :bordered="false" title="Sign In To ATMPS">
-        <a-form :form="form" layout="horizontal" @submit="onSubmit">
+      <a-card :bordered="false" title="Sign In To Draw System">
+        <a-form :form="form" layout="horizontal" @submit="onSubmit" style="margin-top: -15px;">
           <a-alert v-if="showError" :message="error" banner closable />
           <a-form-item label="Username">
             <a-input
@@ -100,7 +100,8 @@ export default {
             token: response.accessToken,
             status: true,
           })
-          this.userDetail()
+          this.$router.push({ path: '/' })
+          // this.userDetail()
           success(this, { message: response.message })
         })
         .catch((e) => {

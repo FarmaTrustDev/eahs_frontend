@@ -20,7 +20,7 @@ export default {
     SpinWheel
   },
   mixins: [routeHelpers],
-  // middleware: 'auth',
+  middleware: 'auth',
   data() {
     return {}
   },
