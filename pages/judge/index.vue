@@ -16,7 +16,7 @@
         <a-icon slot="prefix" type="search" />
       </a-input> -->
       <a-button type="primary" class="" @click="showModal(true)">Configure Rule</a-button>
-      <a-button type="primary" class="" @click="goto('judge/create')">Add Judge</a-button>
+      <a-button type="primary" class="" @click="goto('/judge/create')">Add Judge</a-button>
     </template>
     <div slot="content">
       <a-table
