@@ -83,6 +83,7 @@
     mounted() {
         const self = this;
         self.fetch()
+        self.populateList()
         let transitionStarted = false;
         let rotation = 0
         const padding = {top:20, right:40, bottom:0, left:0}
@@ -146,6 +147,10 @@
             // Now you can use the 'data' variable here
             // Place the code that depends on 'data' here
 
+
+
+
+
             console.log(data)
       const svg = d3.select('#chart')
         .append("svg")
@@ -157,20 +162,9 @@
         .attr("transform", "translate(" + (w/2 + padding.left) + "," + (h/2 + padding.top) + ")");
       const vis = container.append("g");
   
-      // const pie = d3.layout.pie().sort(null).value(function(d){return 1;});
       const pie = d3.pie()
         .sort(null) // Disable sorting
         .value(() => 1); // Value accessor function
-      // const arc = d3.svg.arc().outerRadius(r);
-      // console.log(pie)
-      // const arc = d3.arc().outerRadius(r);
-      // const arc = d3.svg.arc().outerRadius(r);
-      // console.log('Radius: '+r)
-      // const arc = d3.arc().outerRadius(r);
-      // const arc = d3.arc().innerRadius(0).outerRadius(r);
-      // console.log('Arc')
-      // const arcPath = arc(data[0]);
-      // console.log(arcPath)
       const arcs = vis.selectAll("g.slice")
         .data(pie)
         .enter()
@@ -181,12 +175,7 @@
         .attr("d", function(d) {
             return generateArcPath(d); // Assuming generateArcPath is a function that creates the arc path string
         });   
-        /* arcs.append("path")
-        .attr("fill", (d, i) => color(i))
-        .attr("d", function(d) {
-            return arc(d); // Generate the arc path using the arc generator function
-        }); */
-        // console.log(arcs)
+        
         arcs.append("text").attr("transform", function(d){
           d.innerRadius = 0;
           d.outerRadius = r;
@@ -197,7 +186,8 @@
         .text( function(d, i) {
           return data[i].judgeName;
         });
-  
+        
+
       container.on("click", spin);
       function generateArcPath(d) {
         // Assuming d has properties like startAngle, endAngle, innerRadius, outerRadius
@@ -250,7 +240,7 @@
             d3.select(".slice:nth-child(" + (picked + 1) + ") path")
                 .attr("fill", "#111");
             d3.select("#question h1")
-                .text(data[picked].question);
+                .text(data[picked].name);
             });
             
             
@@ -298,6 +288,7 @@
         {
             this.selectedSection = []
             this.oldpick= []
+            localStorage.setItem("selectedSection", null)
         },
         generateList(data, pC, me, conf){
             if(conf===false){
@@ -306,12 +297,14 @@
                         const record = this.selectedSection.find(entry => entry.id === data.id);
                         if(!record){
                             this.selectedSection.push(data)
+                            localStorage.setItem("selectedSection", JSON.stringify(this.selectedSection))
                         }
                         // this.selectedSection.push(data)
                     }else{
                         const record = this.selectedSection.find(entry => entry.countryName === data.countryName);
                         if(!record){
                             this.selectedSection.push(data)
+                            localStorage.setItem("selectedSection", JSON.stringify(this.selectedSection))
                         }
                     }
                 }else{
@@ -321,12 +314,14 @@
                             const record = this.selectedSection.find(entry => entry.id === data.id);
                             if(!record){
                                 this.selectedSection.push(data)
+                                localStorage.setItem("selectedSection", JSON.stringify(this.selectedSection))
                             }
                             // this.selectedSection.push(data)
                         }else{
                             const record = this.selectedSection.find(entry => entry.countryName === data.countryName);
                             if(!record){
                                 this.selectedSection.push(data)
+                                localStorage.setItem("selectedSection", JSON.stringify(this.selectedSection))
                             }
                         }
                     }else{
@@ -334,10 +329,12 @@
                         if(!record){
                             if(!pC){
                                 this.selectedSection.push(data)
+                                localStorage.setItem("selectedSection", JSON.stringify(this.selectedSection))
                             }else{
                                 const records = this.selectedSection.find(entry => entry.countryName === data.countryName);
                                 if(!records){
                                     this.selectedSection.push(data)
+                                    localStorage.setItem("selectedSection", JSON.stringify(this.selectedSection))
                                 }
                             }
                             
@@ -354,11 +351,13 @@
                             const record = this.selectedSection.find(entry => entry.id === data.id);
                             if(!record){
                                 this.selectedSection.push(data)
+                                localStorage.setItem("selectedSection", JSON.stringify(this.selectedSection))
                             }
                         }else{
                             const record = this.selectedSection.find(entry => entry.countryName === data.countryName);
                             if(!record){
                                 this.selectedSection.push(data)
+                                localStorage.setItem("selectedSection", JSON.stringify(this.selectedSection))
                             }
                         }
                     }else{
@@ -367,6 +366,7 @@
                             const record = this.selectedSection.find(entry => entry.id === data.id);
                             if(!record){
                                 this.selectedSection.push(data)
+                                localStorage.setItem("selectedSection", JSON.stringify(this.selectedSection))
                             }
                             // this.selectedSection.push(data)
                         }
@@ -380,7 +380,15 @@
                 // console.log(this.judgesData.data)
             })
         } */
+        populateList(){
+            if(localStorage.getItem('selectedSection')!==null){
+                this.selectedSection=JSON.parse(localStorage.getItem('selectedSection'))
+            }
+            console.log(JSON.parse(localStorage.getItem('selectedSection')))
+        },
         fetch() {
+            // this.populateList()
+            // this.selectedSection=
             return JudgeServices.get().then((response) => {
                 this.judgesData = response;
                 // console.log(this.judgesData.data)
