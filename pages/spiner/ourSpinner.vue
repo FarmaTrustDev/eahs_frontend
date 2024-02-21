@@ -1,27 +1,30 @@
 <template>
     <div>
         <a-row>
-            <a-col :span="8">
-                <img src='~/assets/logo/ad_logo.png' style="height: 220px; width: 70%; margin-left: 25px; border: none;"/>
+            <a-col :span="3"></a-col>
+            <a-col :span="7">
+                <img src='~/assets/logo/ad_logo.png' style="height: 160px; width: 70%; margin-left: 25px; border: none;"/>
+            </a-col>
+            <a-col :span="4">
+                <img src='~/assets/logo/hs_logo.png' style="height: 160px; width: 75%;"/>
             </a-col>
             <a-col :span="6">
-                <img src='~/assets/logo/hs_logo.png' style="height: 220px; width: 75%;"/>
-            </a-col>
-            <a-col :span="10">
-                <img src='~/assets/logo/cat.png' style="height: 220px; width: 75%; border: none;"/>
+                <img src='~/assets/logo/cat.png' style="height: 160px; width: 70%; border: none;"/>
                 
             </a-col>
+            <a-col :span="4"></a-col>
         </a-row>
         <a-row style="margin-top:50px">
             <a-col :span="14">
                 <div id="chart"></div>
                 <a-button :disabled="spinning" type="primary" style="width: 500px; margin-top: 620px; margin-left: 25px;" @click="resetWheel()">Reset</a-button>
+                <a-col :span="17" style="text-align: center; margin-top: 5px; font-size: 20px; font-weight: bold;">{{ error }}</a-col>
             </a-col>
             <a-col :span="10" style="padding-top: 20px;">
                 <a-row v-for="(se,index) in selectedSection" :key="index" style="margin-top: 20px;">
-                    <a-col :span="2" style="font-size: 18px;">{{ index+1 }}</a-col>
-                    <a-col :span="2"><img :src="`${se.countryFlag}`" width="25" height="25"></a-col>
-                    <a-col :span="16" style="font-size: 22px;">{{ se.judgeName }}</a-col>
+                    <a-col :span="2" style="font-size: 30px; display: flex; align-items: center;">{{ index+1 }}</a-col>
+                    <a-col :span="3" style="padding-top: 7px;"><img :src="`${se.countryFlag}`" width="40" height="30"></a-col>
+                    <a-col :span="16" style="font-size: 30px;">{{ se.judgeName }}</a-col>
                 </a-row>
             </a-col>
         </a-row>
@@ -43,6 +46,7 @@
             prizeNumber: 8,
             oldpick:[],
             judgesData:[],
+            error:'',
             prizeListOrigin: [
                 {
                 icon: "https://picsum.photos/40?random=1",
@@ -185,7 +189,8 @@
         .attr("text-anchor", "end")
         .text( function(d, i) {
           return data[i].judgeName;
-        });
+        })        
+        .style("fill", "white");
         
 
       container.on("click", spin);
@@ -238,9 +243,9 @@
             })
             .each("end", function(){
             d3.select(".slice:nth-child(" + (picked + 1) + ") path")
-                .attr("fill", "#111");
+                .attr("fill", "#fff");
             d3.select("#question h1")
-                .text(data[picked].name);
+                .text(data[picked].judgeName);
             });
             
             
@@ -288,56 +293,71 @@
         {
             this.selectedSection = []
             this.oldpick= []
-            localStorage.setItem("selectedSection", null)
+            localStorage.setItem("selectedSection", JSON.stringify([]))
+            this.error=''
         },
         generateList(data, pC, me, conf){
+            this.error=''
+            console.log(data)
             if(conf===false){
                 if(me===false){
                     if(pC===false){
-                        const record = this.selectedSection.find(entry => entry.id === data.id);
-                        if(!record){
+                        const record = this.selectedSection?.find(entry => entry.id === data.id);
+                        if(record===false || record===undefined){
                             this.selectedSection.push(data)
                             localStorage.setItem("selectedSection", JSON.stringify(this.selectedSection))
                         }
                         // this.selectedSection.push(data)
                     }else{
-                        const record = this.selectedSection.find(entry => entry.countryName === data.countryName);
-                        if(!record){
+                        const record = this.selectedSection?.find(entry => entry.countryName === data.countryName);
+                        if(record===false || record===undefined){
                             this.selectedSection.push(data)
                             localStorage.setItem("selectedSection", JSON.stringify(this.selectedSection))
+                        }else{
+                            // alert(data.countryName + ' already exists')
+                            this.error=data.countryName + ' already exists'
                         }
                     }
                 }else{
                     console.log('Entring to check member & per country rule')
                     if(!data.isMember){
                         if(!pC){
-                            const record = this.selectedSection.find(entry => entry.id === data.id);
-                            if(!record){
+                            const record = this.selectedSection?.find(entry => entry.id === data.id);
+                            if(record===false || record===undefined){
                                 this.selectedSection.push(data)
                                 localStorage.setItem("selectedSection", JSON.stringify(this.selectedSection))
                             }
                             // this.selectedSection.push(data)
                         }else{
-                            const record = this.selectedSection.find(entry => entry.countryName === data.countryName);
-                            if(!record){
+                            const record = this.selectedSection?.find(entry => entry.countryName === data.countryName);
+                            if(record===false || record===undefined){
                                 this.selectedSection.push(data)
                                 localStorage.setItem("selectedSection", JSON.stringify(this.selectedSection))
+                            }else{
+                                // alert(data.countryName + ' already exists')
+                                this.error=data.countryName + ' already exists'
                             }
                         }
                     }else{
-                        const record = this.selectedSection.find(entry => entry.isMember===true);
-                        if(!record){
+                        // const record = this.selectedSection?.find(entry => entry.isMember===true);
+                        const numRecord=this.selectedSection?.filter(entry=>entry.isMember===true).length
+                        // if(record===false || record===undefined){
+                        if(numRecord<2){
                             if(!pC){
                                 this.selectedSection.push(data)
                                 localStorage.setItem("selectedSection", JSON.stringify(this.selectedSection))
                             }else{
-                                const records = this.selectedSection.find(entry => entry.countryName === data.countryName);
-                                if(!records){
+                                const records = this.selectedSection?.find(entry => entry.countryName === data.countryName);
+                                if(!records || records===undefined){
                                     this.selectedSection.push(data)
                                     localStorage.setItem("selectedSection", JSON.stringify(this.selectedSection))
+                                }else{
+                                    // alert(data.countryName + ' already exists')
+                                    this.error=data.countryName + ' already exists'
                                 }
                             }
-                            
+                        }else{
+                            this.error='EAHS member rule applied'
                         }
                     }
                 }
@@ -348,29 +368,76 @@
                     if(!me){
                         if(!pC){
                             // this.selectedSection.push(data)
-                            const record = this.selectedSection.find(entry => entry.id === data.id);
-                            if(!record){
+                            const record = this.selectedSection?.find(entry => entry.id === data.id);
+                            if(record===false || record===undefined){
                                 this.selectedSection.push(data)
                                 localStorage.setItem("selectedSection", JSON.stringify(this.selectedSection))
                             }
                         }else{
-                            const record = this.selectedSection.find(entry => entry.countryName === data.countryName);
-                            if(!record){
+                            const record = this.selectedSection?.find(entry => entry.countryName === data.countryName);
+                            if(record===false || record===undefined){
                                 this.selectedSection.push(data)
                                 localStorage.setItem("selectedSection", JSON.stringify(this.selectedSection))
+                            }else{
+                                // alert(data.countryName + ' already exists')
+                                this.error=data.countryName + ' already exists'
                             }
                         }
                     }else{
                         console.log('Entring to check member rule')
                         if(!data.isMember){
-                            const record = this.selectedSection.find(entry => entry.id === data.id);
-                            if(!record){
-                                this.selectedSection.push(data)
-                                localStorage.setItem("selectedSection", JSON.stringify(this.selectedSection))
+                            console.log('Entring to check member and country')
+                            if(!pC){
+                                const record = this.selectedSection?.find(entry => entry.id === data.id);
+                                if(record===false || record===undefined){
+                                    this.selectedSection.push(data)
+                                    localStorage.setItem("selectedSection", JSON.stringify(this.selectedSection))
+                                }    
+                            }else{
+                                const records = this.selectedSection?.find(entry => entry.countryName === data.countryName);
+                                // alert(records)
+                                if(records===false || records===undefined){
+                                    const record = this.selectedSection?.find(entry => entry.id === data.id);
+                                    if(!record || record===undefined){
+                                        this.selectedSection.push(data)
+                                        localStorage.setItem("selectedSection", JSON.stringify(this.selectedSection))
+                                    }
+                                }else{
+                                    // alert(data.countryName + ' already exists')
+                                    this.error=data.countryName + ' already exists'
+                                }
                             }
                             // this.selectedSection.push(data)
+                        }else{
+                            console.log('Entring to check member and country')
+                            const numRecord=this.selectedSection?.filter(entry=>entry.isMember===true).length
+                            if(numRecord<2){
+                                if(!pC){
+                                    const record = this.selectedSection?.find(entry => entry.id === data.id);
+                                    if(record===false || record===undefined){
+                                        this.selectedSection.push(data)
+                                        localStorage.setItem("selectedSection", JSON.stringify(this.selectedSection))
+                                    }    
+                                }else{
+                                    const records = this.selectedSection?.find(entry => entry.countryName === data.countryName);
+                                    if(records===false || records===undefined){
+                                        const record = this.selectedSection?.find(entry => entry.id === data.id);
+                                        if(!record || record===undefined){
+                                            this.selectedSection.push(data)
+                                            localStorage.setItem("selectedSection", JSON.stringify(this.selectedSection))
+                                        }
+                                    }else{
+                                        // alert(data.countryName + ' already exists')
+                                        this.error=data.countryName + ' already exists'
+                                    }
+                                }
+                            }else{
+                                this.error='EAHS member rule applied'
+                            }
                         }
                     }
+                }else{
+                    this.error='Conflict of interest rule applied'
                 }
             }
         },
@@ -381,13 +448,11 @@
             })
         } */
         populateList(){
-            if(localStorage.getItem('selectedSection')!==null){
-                this.selectedSection=JSON.parse(localStorage.getItem('selectedSection'))
-            }
+            this.selectedSection=JSON.parse(localStorage.getItem('selectedSection'))
             console.log(JSON.parse(localStorage.getItem('selectedSection')))
         },
         fetch() {
-            // this.populateList()
+            this.populateList()
             // this.selectedSection=
             return JudgeServices.getSpinJudges().then((response) => {
                 this.judgesData = response;
