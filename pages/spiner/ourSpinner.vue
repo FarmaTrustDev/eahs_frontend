@@ -389,7 +389,7 @@
         fetch() {
             // this.populateList()
             // this.selectedSection=
-            return JudgeServices.get().then((response) => {
+            return JudgeServices.getSpinJudges().then((response) => {
                 this.judgesData = response;
                 // console.log(this.judgesData.data)
             });

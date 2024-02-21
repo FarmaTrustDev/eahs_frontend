@@ -9,6 +9,12 @@ function get() {
     method: 'GET'
   })
 }
+function getSpinJudges() {
+  return request({
+    url: `${baseApi}/getSpinJudges`,
+    method: 'GET'
+  })
+}
 function getById(id) {
   return request({
     url: `${baseApi}/${id}`,
@@ -43,6 +49,19 @@ function remove(id) {
     method: 'DELETE',
   })
 }
+function disable(id) {
+  return request({
+    url: `${baseApi}/disable/${id}`,
+    method: 'PATCH',
+  })
+}
+
+function enable(id) {
+  return request({
+    url: `${baseApi}/enable/${id}`,
+    method: 'PATCH',
+  })
+}
 
 function approval(data) {
   return request({
@@ -75,10 +94,13 @@ function getRejected(){
 
 const JudgeServices = {
   get,
+  getSpinJudges,
   create,
   getById,
   update,
   remove,
+  disable,
+  enable,
   approval,
   getPending,
   getAccepted,

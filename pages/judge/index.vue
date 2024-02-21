@@ -47,6 +47,30 @@
               <a-menu-item key="labDetail">
                 <a @click="goto(`/judge/${action.globalId}`)">Edit</a>
               </a-menu-item>
+              <a-menu-item v-if="action.deletedBy===1" key="labDisable">
+                <a-popconfirm
+                title="Are you sure to enable?"
+                ok-text="Yes"
+                cancel-text="No"
+                placement="topLeft"
+                @confirm="enable(`${action.globalId}`)"
+                >
+                Enable
+              </a-popconfirm>
+                
+              </a-menu-item>
+              <a-menu-item v-else key="labDisable">
+                <a-popconfirm
+                title="Are you sure to disable?"
+                ok-text="Yes"
+                cancel-text="No"
+                placement="topLeft"
+                @confirm="disable(`${action.globalId}`)"
+                >
+                Disable
+              </a-popconfirm>
+                
+              </a-menu-item>
               <a-menu-item key="labDelete">
                 <a-popconfirm
                 title="Are you sure to delete?"
@@ -195,6 +219,18 @@ export default {
     remove(id) {
       this.loading = true
       JudgeServices.remove(id).then((response)=>{
+        this.fetch()
+      }).catch(this.error).finally(this.loading = false)
+    },
+    disable(id) {
+      this.loading = true
+      JudgeServices.disable(id).then((response)=>{
+        this.fetch()
+      }).catch(this.error).finally(this.loading = false)
+    },
+    enable(id) {
+      this.loading = true
+      JudgeServices.enable(id).then((response)=>{
         this.fetch()
       }).catch(this.error).finally(this.loading = false)
     },
