@@ -21,7 +21,7 @@
                 <a-row v-for="(se,index) in selectedSection" :key="index" style="margin-top: 20px;">
                     <a-col :span="2" style="font-size: 18px;">{{ index+1 }}</a-col>
                     <a-col :span="2"><img :src="`${se.countryFlag}`" width="25" height="25"></a-col>
-                    <a-col :span="16" style="font-size: 18px;">{{ se.judgeName }}</a-col>
+                    <a-col :span="16" style="font-size: 22px;">{{ se.judgeName }}</a-col>
                 </a-row>
             </a-col>
         </a-row>

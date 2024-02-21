@@ -38,6 +38,10 @@
           <a-icon v-if="isConflict.isConflict===true" type="check"  class="txt-green" />
           <a-icon v-else type="close"  class="txt-red" />
         </template>
+        <template slot="status" slot-scope="status">
+          <a-icon v-if="status.deletedBy!==1" type="check"  class="txt-green" />
+          <a-icon v-else type="close"  class="txt-red" />
+        </template>
         <template slot="action" slot-scope="action">
           <a-dropdown>
             <a-button class="action-button" @click="preventDefault">
@@ -179,6 +183,12 @@ export default {
           title: `Is Eahs Member`,
           key: 'isMember ',
           scopedSlots: { customRender: 'isMember' }
+          
+        },
+        {
+          title: `Status`,
+          key: 'status ',
+          scopedSlots: { customRender: 'status' }
           
         },
         {
