@@ -1,34 +1,34 @@
 <template>
     <div>
         <a-row>
-            <a-col :span="3"></a-col>
+            
             <a-col :span="7">
-                <img src='~/assets/logo/ad_logo.png' style="height: 160px; width: 70%; margin-left: 25px; border: none;"/>
-            </a-col>
-            <a-col :span="4">
-                <img src='~/assets/logo/hs_logo.png' style="height: 160px; width: 75%;"/>
-            </a-col>
-            <a-col :span="6">
-                <img src='~/assets/logo/cat.png' style="height: 160px; width: 70%; border: none;"/>
                 
             </a-col>
-            <a-col :span="4"></a-col>
+            
+            <a-col :span="10" style="text-align: center;">
+                <img src='~/assets/logo/GCAT-logo-scaled-removebg-preview.png' width="100%" height="100%" style="border: none;"/>
+            </a-col>
+            <a-col :span="7">
+                
+                
+            </a-col>
         </a-row>
-        <a-row style="margin-top:50px">
-            <a-col :span="14">
+        <a-row style="margin-top:5px; margin-left: -250px;">
+            <a-col :span="16">
                 <div id="chart"></div>
-                <a-button :disabled="spinning" type="primary" style="width: 500px; margin-top: 620px; margin-left: 25px;" @click="resetWheel()">Reset</a-button>
+                <a-button :disabled="spinning" type="primary" style="width: 700px; margin-top: 1040px; margin-left: 120px;" @click="resetWheel()">Reset</a-button>
                 <a-col :span="17" style="text-align: center; margin-top: 5px; font-size: 20px; font-weight: bold;">{{ error }}</a-col>
             </a-col>
-            <a-col :span="10" style="padding-top: 20px;">
+            
+            <a-col :span="8" style="padding-top: 30px; padding-left: 30px;">
                 <a-row v-for="(se,index) in selectedSection" :key="index" style="margin-top: 20px;">
-                    <a-col :span="2" style="font-size: 30px; display: flex; align-items: center;">{{ index+1 }}</a-col>
-                    <a-col :span="3" style="padding-top: 7px;"><img :src="`${se.countryFlag}`" width="40" height="30"></a-col>
-                    <a-col :span="16" style="font-size: 30px;">{{ se.judgeName }}</a-col>
+                    <a-col :span="2" style="font-size: 25px; display: flex; align-items: center;">{{ index+1 }}</a-col>
+                    <a-col :span="3" style="padding-top: 5px;"><img :src="`${se.countryFlag}`" width="40" height="30"></a-col>
+                    <a-col :span="19" style="font-size: 25px;">{{ se.judgeName }}</a-col>
                 </a-row>
             </a-col>
         </a-row>
-      <div id="question"><h1></h1></div>
     </div>
   </template>
   
@@ -91,8 +91,8 @@
         let transitionStarted = false;
         let rotation = 0
         const padding = {top:20, right:40, bottom:0, left:0}
-        const w = 600 - padding.left - padding.right
-        const h = 600 - padding.top  - padding.bottom
+        const w = 1024 - padding.left - padding.right
+        const h = 1024 - padding.top  - padding.bottom
         const r = Math.min(w, h)/2
         let perCount=false
         let member=false
@@ -357,7 +357,7 @@
                                 }
                             }
                         }else{
-                            this.error='EAHS member rule applied'
+                            this.error='Ecaho members rule applied'
                         }
                     }
                 }
@@ -432,7 +432,7 @@
                                     }
                                 }
                             }else{
-                                this.error='EAHS member rule applied'
+                                this.error='Ecaho members rule applied'
                             }
                         }
                     }
@@ -448,7 +448,9 @@
             })
         } */
         populateList(){
-            this.selectedSection=JSON.parse(localStorage.getItem('selectedSection'))
+            if(localStorage.getItem('selectedSection')!==null){
+                this.selectedSection=JSON.parse(localStorage.getItem('selectedSection'))
+            }
             console.log(JSON.parse(localStorage.getItem('selectedSection')))
         },
         fetch() {
@@ -486,8 +488,8 @@
   
   #chart{
     position:absolute;
-    width:600px;
-    height:600px;
+    width:1024px;
+    height:1024px;
     top:0;
     left:0;
   }
