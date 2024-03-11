@@ -3,7 +3,7 @@
     :create="false"
     :loading="loading"
     :bordered="false"
-    title=" Add Judge Detail"
+    title=" Add Organizations Detail"
     class="container"
   >
     <template slot="content">
@@ -20,7 +20,7 @@
 </template>
 <script>
 import PageLayout from '~/components/layout/PageLayout'
-import formField from '~/components/root/users'
+import formField from '~/components/root/orgs'
 export default {
   components: { 'page-layout': PageLayout, formField },
   data() {

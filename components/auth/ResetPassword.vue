@@ -59,7 +59,7 @@
               :loading="loading"
               >Submit</a-button
             >
-            <h3 > <a @click="goto('/login')"> Back To Login</a> </h3>
+           
           </a-form-item>
         </a-form>
       </a-card>
@@ -68,7 +68,7 @@
 </template>
 
 <script>
-import UserServices from '~/services/API/UserServices'
+import UsersServices from '~/services/API/UsersServices'
 import { success } from '~/services/Helpers/notifications'
 import { isEmpty } from '~/services/Helpers'
 import routeHelpers from '~/mixins/route-helpers'
@@ -105,10 +105,10 @@ export default {
           const pass=values.password
           const confirmPass=values.confirmPassword
           if(pass===confirmPass){
-            UserServices.resetPassword(values.privateKey,values).then((response)=>{
+            UsersServices.resetPassword(values.privateKey,values).then((response)=>{
               success(this,{message:response.data})
             }).then(()=>{
-              this.$router.push({ path: '/login' })
+              this.$router.push({ path: '/activateAccount' })
               this.loading = false
             })
             .catch((e) => {

@@ -5,8 +5,7 @@
 </template>
 
 <script>
-import AuthServices from '~/services/API/AuthServices'
-import { setAccessToken, setRefreshToken } from '~/services/Auth'
+import UsersServices from '~/services/API/UsersServices'
 import { isEmpty } from '~/services/Helpers'
 
 export default {
@@ -26,21 +25,21 @@ export default {
   },
   methods:{
     checkUserKey(key) {
-      AuthServices.getActivationAuth(key)
+      UsersServices.newUserById(key)
         .then((response) => {
-          setRefreshToken(response.refreshToken)
-          setAccessToken(response.accessToken)
-          this.$store.commit('setToken', {
+          // setRefreshToken(response.refreshToken)
+          // setAccessToken(response.accessToken)
+          /* this.$store.commit('setToken', {
             token: response.accessToken,
             status: response.success,
-          })
+          }) */
           this.isAuthenticated=true
         })
         .catch((e) => {
           if (!isEmpty(e.response)) {
             this.error = e.response.data.message
             this.showError = true
-            this.$route.push({path: '/login'})
+            // this.$route.push({path: '/login'})
           }
         })
         .finally(() => (this.loading = false))

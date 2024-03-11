@@ -4,7 +4,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'CGT',
+    title: 'UAMS',
     htmlAttrs: {
       lang: 'en',
     },

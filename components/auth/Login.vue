@@ -57,7 +57,7 @@
 
 <script>
 import AuthServices from '~/services/API/AuthServices'
-import UserServices from '~/services/API/UserServices'
+import UsersServices from '~/services/API/UsersServices'
 // import AssetServices from '~/services/API/AssetServices'
 // import LocatorServices from '~/services/API/LocationServices'
 import { setAccessToken, setRefreshToken} from '~/services/Auth'
@@ -113,7 +113,7 @@ export default {
         .finally(() => (this.loading = false))
     },
     userDetail() {
-      UserServices.detail()
+      UsersServices.getMenu()
         .then((response) => {
           this.$store.commit('setUser', response.data)
         })

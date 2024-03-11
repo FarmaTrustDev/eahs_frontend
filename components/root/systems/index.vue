@@ -25,12 +25,14 @@
 import routeHelpers from '~/mixins/route-helpers'
 import nullHelper from '~/mixins/null-helpers'
 import notifications from '~/mixins/notifications'
-import JudgesServices from '~/services/API/JudgeServices'
-import formfield from '~/components/root/judge/FormField'
+import AppServices from '~/services/API/AppServices'
+import formfield from '~/components/root/systems/FormField'
 import {CONSENT_STATUSES} from '~/services/Constant/index'
 import Signature from '~/components/signature'
 export default {
   components: { formfield ,Signature},
+  props: {
+  },
   mixins: [notifications, routeHelpers, nullHelper],
 
   data() {
@@ -47,8 +49,8 @@ export default {
       form: this.$form.createForm(this, {
         name: 'labCreate',
       }),
-      gotoLink: '/judge',
-      apiService: JudgesServices,
+      gotoLink: '/system',
+      apiService: AppServices,
       fileList: [],
       isCreated: false,
       
@@ -81,10 +83,8 @@ export default {
         .then((response) => {
           this.entity = response.data
           this.form.setFieldsValue({
-          judgeName: response.data.judgeName,
-          countryName: response.data.countryName,
-          isConflict:response.data.isConflict,
-          isMember:response.data.isMember
+          appName: response.data.appName,
+          appCode: response.data.appCode,
         });
           if (this.isFunction(this.getEntity)) {
             this.getEntity(response)
@@ -93,26 +93,18 @@ export default {
         .finally(() => (this.loading = false))
     },
     upsert(values) {
-      
-      const formData = new FormData()
-      for (const key in values) {
-        formData.append(key, values[key])
-      }
-      this.fileList.forEach((files) => {
-        formData.append('countryFlag ', files.originFileObj)
-      })
       if (this.isFunction(this.beforeUpsert)) {
         this.beforeUpsert(values)
       }
       if (this.isCreated) {
-        return this.update(formData)
+        return this.update(values)
       }
-      return this.create(formData)
+      return this.create(values)
     },
     update(values) {
       this.btnLoading = true
       this.apiService
-        .update(this.entityId, values)
+        .updateApp(this.entityId, values)
         .then((response) => {
           this.success(response.message)
           if (!this.isEmpty(this.gotoLink)) {
@@ -133,7 +125,7 @@ export default {
       this.btnLoading = true
       this.loading = true
       this.apiService
-        .create(values)
+        .createApp(values)
         .then((response) => {
           if(response.message===true){
             this.success(response.message)
@@ -166,15 +158,7 @@ export default {
       e.preventDefault()
       this.form.validateFields((err, values) => {
         if (!err) {      
-          values.status = this.pending
-          if(values.isConflict === undefined){
-            values.isConflict = false
-          }
-          if(values.isMember === undefined){
-            values.isMember = false
-          }
-          this.labData = values
-          this.upsert(this.labData)
+          this.upsert(values)
         } else {
           this.loading = false
         }

@@ -3,7 +3,7 @@
     :create="false"
     :loading="loading"
     :bordered="false"
-    title=" Add Judge Detail"
+    title=" Add User Detail"
     class="container"
   >
     <template slot="content">
